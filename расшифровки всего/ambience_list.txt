@@ -1,0 +1,46 @@
+###############################################################################################
+Release:
+# Файл "изменён" - улучшен.
+Версия файла 2.0
+Автор улучшенной версии Максим Райс.
+###############################################################################################
+_______________________________________________________________________________________________
+Список эмбиенсов:------------------------------------------------------------------------------
+ambience_boat_station_day            'Шум воды у лодочной станции день.'                     |#
+ambience_boat_station_night          'Шум воды у лодочной станции ночь.'                     |#
+ambience_camp_center_day             'Пение птиц день.'                                      |#
+ambience_camp_center_evening         'Пение птиц и кукушка вдалеке.'                         |#
+ambience_camp_center_night           'Кузнечики ночь.'                                       |#
+ambience_camp_entrance_day           'Шум в лагере день.'                                    |#
+ambience_camp_entrance_day_people    'Шум в лагере день 2.'                                  |#
+ambience_camp_entrance_evening       'Шум в лагере с цикадой.'                               |#
+ambience_camp_entrance_night         'Шум в лагере с шагами, и вдалеке гроза.'               |#
+ambience_catacombs                   'Эхо в катакомбах.'                                     |#
+ambience_catacombs_stones            'Эхо в катакомбах страшней.'                            |#
+ambience_clubs_inside_day            'Радио клуб.'                                           |#
+ambience_cold_wind_loop              'Ветер.'                                                |#
+ambience_day_countryside_ambience    'Пение птиц 2.'                                         |#
+ambience_dining_hall_empty           'Шум в столовой один.'                                  |#
+ambience_dining_hall_full            'Шум в полной столовой.'                                |#
+ambience_ext_road_day                'Шум у дороги день.'                                    |#
+ambience_ext_road_evening            'Шум у дороги с цикадой.'                               |#
+ambience_ext_road_night              'Шум у дороги ночь.'                                    |#
+ambience_forest_day                  'Птицы в лесу день.'                                    |#
+ambience_forest_evening              'Птицы в лесу 2.'                                       |#
+ambience_forest_night                'Птицы и насекомые в лесу ночь.'                        |#
+ambience_grasshoper_clean            'Насекомые.'                                            |#
+ambience_int_cabin_day               'Часы и птицы день.'                                    |#
+ambience_int_cabin_evening           'Часы и птицы 2.'                                       |#
+ambience_int_cabin_night             'Часы и кузнечики ночь.'                                |#
+ambience_lake_shore_day              'Шум реки, и птицы день.'                               |#
+ambience_lake_shore_evening          'Шум реки, и насекомых.'                                |#
+ambience_lake_shore_night            'Шум реки, и насекомых ночь.'                           |#
+ambience_library_day                 'Листание книг в библиотеке.'                           |#
+ambience_medium_crowd_indoors_1      'Шум разговоров громко.'                                |#
+ambience_medium_crowd_outdoors       'Шум разговоров тише.'                                  |#
+ambience_medstation_inside_day       'Часы в медпункте и птицы день.'                        |#
+ambience_medstation_inside_night     'Часы в медпункте ночь.'                                |#
+ambience_music_club_day              'Часы в музыкальном клубе и птицы день.'                |#
+ambience_music_club_night            'Часы в музыкальном клубе и насекомые ночь.'            |#
+ambience_old_camp_outside            'Насекомые, ворона, страшно.'                           |#
+ambience_soccer_play_background      'Игра на спортплощадке.'                                |#

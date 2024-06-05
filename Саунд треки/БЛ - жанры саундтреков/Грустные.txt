@@ -1,0 +1,8 @@
+play music music_list["a_promise_from_distant_days"]
+play music music_list["a_promise_from_distant_days_v2"] (та же самая песня что и первая, отличий не нашёл.)
+play music music_list["meet_me_there"]
+play music music_list["raindrops"]
+play music music_list["your_bright_side"]
+
+
+

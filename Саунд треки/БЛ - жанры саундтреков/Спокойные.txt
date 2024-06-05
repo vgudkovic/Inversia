@@ -1,0 +1,11 @@
+play music music_list["confession_oboe"]
+play music music_list["get_to_know_me_better"]
+play music music_list["goodbye_home_shores"]
+play music music_list["memories"]
+play music music_list["memories_piano_outdoors"] - та же что и выше только версия на пианино
+play music music_list["my_daily_life"]
+play music music_list["she_is_kind"]
+play music music_list["smooth_machine"]
+play music music_list["sweet_darkness"]
+play music music_list["take_me_beautifully"]
+play music music_list["two_glasses_of_melancholy"]

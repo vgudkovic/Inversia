@@ -1,0 +1,2 @@
+play music music_list["blow_with_the_fires"]
+play music music_list["kostry"] - та же сама€ перва€ мелоди€ только под электро-гитару

@@ -1,0 +1,86 @@
+#Призыв каких-то звуков
+renpy.play(blwnfh_sfx_list["ps4_ach"], channel="sound")
+
+Вызов выбора, инструкция
+    Варианты функций:
+        blwnfh_double_choice_gte
+        blwnfh_double_choice
+        blwnfh_triple_choice_qte
+        blwnfh_triple_choice
+                                                                                                                #Это для qte
+    call screen blwnfh_double_choice(button_1, button_2, text_1, text_2, variant_1, variant_2, label_1, label_2, [qte]) 
+    #В качестве аргументов функция принимает в себя:
+    button_1 = "Файл кнопки 1" #Он будет слева
+    button_2 = "Файл кнопки 2" #Она соответственно справа
+    button_3 = "Файл кнопки 3" #Она будет внизу, только для triple_choice
+    text_1, text_2, text_3 = "Текст при наведении на кнопки 1, 2 и 3 соответственно"
+    variant_1, variant_2, variant_3 = "Заголовок кнопок 1, 2 и 3"
+    label_1, label_2, label_3 = "Прыжок на лейбл при выборе 1, 2 или 3"
+    
+    qte = "Чё будет если не успеть нажать"
+    
+    
+    
+Анимации
+    ## 0 - слева и сверху, 1 снизу и справа.
+    pos
+        Тип: (позиция, позиция)
+        По умолчанию: (0, 0)
+        Положение относительно верхнего левого угла экрана.
+    xpos
+        Тип: позиция x
+        По умолчанию: 0
+        Горизонтальное положение относительно левой стороны экрана.   
+    ypos
+        Тип: позиция y
+        По умолчанию: 0
+        Вертикальное положение относительно верхней части экрана.
+    
+    anchor
+        Тип: (позиция, позиция)
+        По умолчанию: (0, 0)
+        Положение привязки относительно верхнего левого угла отображаемого объекта.
+    xanchor
+        Тип: позиция
+        По умолчанию: 0
+        Горизонтальное положение привязки относительно левой стороны отображаемого объекта.
+    yanchor
+        Тип: позиция
+        По умолчанию: 0
+        Вертикальное положение привязки относительно верхней части отображаемого объекта.
+
+Положения спрайтов
+    transform center:
+        xalign 0.5
+        xanchor 0.5
+        yanchor 0.0
+
+    transform left:
+        xalign 0.28
+        xanchor 0.5
+        yanchor 0.0
+
+    transform right:
+        xalign 0.72
+        xanchor 0.5
+        yanchor 0.0
+
+    transform fleft:
+        xalign 0.16
+        xanchor 0.5
+        yanchor 0.0
+
+    transform fright:
+        xalign 0.84
+        xanchor 0.5
+        yanchor 0.0
+
+    transform cleft:
+        xalign 0.355
+        xanchor 0.5
+        yanchor 0.0
+
+    transform cright:
+        xalign 0.645
+        xanchor 0.5
+        yanchor 0.0

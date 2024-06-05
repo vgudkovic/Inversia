@@ -1,0 +1,16 @@
+play music music_list["door_to_nightmare"]
+play music music_list["drown"]
+play music music_list["faceless"]
+play music music_list["into_the_unknown"]
+play music music_list["just_think"]
+play music music_list["no_tresspassing"] - для страшных вставок используйте этот вариант
+play music music_list["orchid"] - или этот
+play music music_list["pile"] - эта если за вами гонится монстр
+play music music_list["scarytale"] - или эта
+play music music_list["sunny_day"]
+play music music_list["torture"]
+play music music_list["you_lost_me"]
+
+
+
+

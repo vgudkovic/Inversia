@@ -1,0 +1,12 @@
+play music music_list["afterword"]
+play music music_list["miku_song_flute"] - Песня Мику на флейте
+play music music_list["miku_song_voice"] - Песня Мику вокал
+play music music_list["no_tresspassing"]
+play music music_list["reflection_on_water"]
+play music music_list["reminiscences"]
+play music music_list["silhouette_in_sunset"]
+play music music_list["sparkles"]
+play music music_list["timid_girl"]
+play music music_list["trapped_in_dreams"]
+play music music_list["tried_to_bring_it_back"]
+play music music_list["what_do_you_think_of_me"]

@@ -1,0 +1,8 @@
+play music music_list["everlasting_summer"]
+play music music_list["farewell_to_the_past_edit"]
+play music music_list["farewell_to_the_past_full"] - та же что и вторая только полная версия
+play music music_list["i_dont_blame_you"]
+play music music_list["lets_be_friends"]
+play music music_list["opening"]
+play music music_list["so_good_to_be_careless"]
+play music music_list["waltz_of_doubts"]
