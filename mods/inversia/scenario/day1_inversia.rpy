@@ -557,12 +557,13 @@ label sport_area_inv:
 
     if obhodnoi == 1:
         #[Если не всё прошёл]
-    zg "Ладно, пойду я, ещё не всё исследовал."
+        zg "Ладно, пойду я, ещё не всё исследовал."
         $ disable_all_zones()
         $ set_zone("sport_area", "sport_area_inv") 
         $ show_map ()
-    else obhodnoi == 2:
+    elif obhodnoi == 2:
         jump obhodnoi_zakrit
+        
 
 label obhodnoi_zakrit:
     #*звон горна
