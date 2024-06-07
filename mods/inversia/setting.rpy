@@ -19,12 +19,10 @@ init -1 python:
         "uv":[u"Юля", "#4EFF00"],
         "voice":[u"Голос", "#e1dd7d"],
         # новые персонажи
-        zg = ['Женя', color = "#00deff", what_color = "#f1d076"]
-        nn = ['Незнакомка', color = "#00deff", what_color = "#f1d076"]
-        sa = ['Саша', color = "#00deff", what_color = "#f1d076"]
         }
 
 init python:
+    
     def chars_define_inversia(kind=adv):
         gl = globals()
         if kind == nvl:

@@ -1,0 +1,556 @@
+# Красивое многоточие "Анимация" 
+"{w=0.4}.{w=0.4}.{w=0.4}."
+
+
+# Режим отладки
+------------------------------------------------------------------
+    $ config.developer = True
+    #Режим отладки: SHIFT + D will display a developer menu that provides easy access to some of the features given below.
+    #Перезагруз без выхода из игры SHIFT + r в английской раскладке
+
+
+
+#Автозамена с добавлением кавычек
+
+    #В Найти: (.*), в Заменить: "$1" и ставим галку в "Регуляр. выражен."
+
+----------------------------------------------
+
+#Прописываем изображения, музыку, звуки
+
+# > Описание <
+# Позволяет автоматически объявить изображения и звуки.
+
+# > Инструкции <
+# 1. Обязательно присвойте переменной `modID` значение.
+#   ID мода не будет виден пользователям и должен содержать только буквы латинского алфавита.
+# 2. Присвойте переменной `modName` название мода.
+#   Будет отображаться в списке модов БЛ.
+# 3. Переменные будут иметь названия, соответствующие названиям файлов.
+#   ! Кириллица недопустима !
+
+# > Использование <
+# Если файл находится в: {modID}/assets/images/ext_bg_bridge_night.png
+# То его можно использовать: `scene ext_bg_bridge_night`
+
+# Если файл аудио находится в: {modID}/assets/images/calm_ambience.mp3
+# То его можно использовать: `play ambience calm_ambience`
+
+
+#Версия с покраской спрайтов
+------------------------------------------------------------------------------------
+init:
+    $ mods["modid"]= u"Название мода"
+    
+    $ config.developer = True
+    
+init 0 python:
+    from os import path
+
+    MOD_ID = "modid"
+    MOD_NAME = "Название мода"
+    COLOR_SPRITES = False # True
+
+    mods[MOD_ID] = MOD_NAME
+
+    for file in renpy.list_files():
+        if MOD_ID in file:
+            file_name = path.splitext(path.basename(file))[0]
+            file_split = file.split("/")
+
+            if file.endswith((".png", ".jpg")):
+                if "sprites" in file_split:
+                    renpy.image(
+                        file_name,
+                        ConditionSwitch(
+                            "persistent.sprite_time == 'sunset'",
+                            im.MatrixColor(
+                                file,
+                                im.matrix.tint(0.94, 0.82, 1.0)
+                            ),
+                            "persistent.sprite_time == 'night'",
+                            im.MatrixColor(
+                                file,
+                                im.matrix.tint(0.63, 0.78, 0.82)
+                            ),
+                            True,
+                            file
+                        )
+                    )
+                else:
+                    renpy.image(file_name, file)
+            elif file.endswith((".wav", ".mp2", ".mp3", ".ogg", ".opus")):
+                globals()[file_name] = file
+
+
+label modid:
+    
+
+#двойные и тройные баблы
+-----------------------------------------------------------------------
+    call kitcat_bubble('sh', 'fright', "Ну? Чем займёмся?", 'dv', 'fleft', "Улька, ты собиралась нам что-то показать после ужина. Сейчас самое время. Или забыла?", 'us', 'center', "Ничего не забыла! Сейчас! Сидите тут, никуда не уходите, я скоро!")
+
+#выбор развилки
+------------------------------------------------------------
+    $ renpy.jump('tw_first_evening_' + tw_gift)
+
+    $ renpy.jump('tw_second_eveing_' + tw_gift)
+
+#Иф с персистентами в тексте
+---------------------------------------------------------------
+    if persistent.tw_gift == 'alisa':
+    if persistent.tw_gift == 'miky':
+    if persistent.tw_gift == 'lena':
+    if persistent.tw_gift == 'slavya':
+    if persistent.tw_gift == 'sych':
+
+#chapter
+----------------------------------------------
+
+    $ new_chapter(0, u"Анти-БЛ, Пролог")
+
+#наезд
+---------------------------------------------------------
+
+    "Я достал из своего рюкзака термос и взялся за крышку."
+    scene bg int_house_of_mt_day:
+        xalign 0.5 yalign 0.7
+        linear 2.0 zoom 2
+        
+#экран "плавает"
+--------------------------------------------------------------
+    
+    zoom 1.05 anchor (48,27)
+    linear 3.0 xpos renpy.random.randint(-18,5) ypos renpy.random.randint(-18,5)
+    linear 3.0 xpos 0 ypos 0
+    repeat        
+         
+# кастомные переходы
+------------------------------------------------------------
+    $ swirl = ImageDissolve("mods/BITD/bg/dissolve1.jpg", 1.5, 30, reverse=False)
+    
+#имитация ходьбы
+--------------------------------------------------------------
+
+    scene bg ext_houses_day:
+        zoom 1.05 anchor (48,27)
+        ease 0.20pos (0, 0)
+        ease 0.20pos (5,5)
+        ease 0.20pos (0, 0)
+        repeat
+
+#другой вариант
+    scene ext_houses_night_kitcat:
+        zoom 1.05 anchor (48,27)
+        linear 0.15 xpos renpy.random.randint(-8,5) ypos renpy.random.randint(-8,5)
+        linear 0.15 xpos 0 ypos 0
+        repeat
+        
+#ещё один, хороший вариант
+    transform walking_bitd:
+    block:
+        zoom 1.1 xcenter 0.5 ycenter 0.5
+    block:
+        ease 0.4 xoffset 0 yoffset 0
+        ease 0.4 xoffset 15 yoffset 25
+        ease 0.4 xoffset 0 yoffset 0
+        ease 0.4 xoffset -10 yoffset 25
+
+#выезд спрайта из-за экрана
+--------------------------------------------------------------
+
+    with moveinleft
+    with moveoutright
+
+#отъезд спрайта за экран
+--------------------------------------------------------------
+    show us smile with moveoutright
+
+#спрайт мечется из стороны в сторону
+-----------------------------------------------------------
+
+    show mz_kitcat_evil:
+        easeout 0.3 xcenter 0.47
+        pause 0.2
+        easeout 0.3 xcenter 0.53
+        pause 0.2
+        repeat
+
+#автотекст
+-----------------------------------------------
+
+    un "{cps=0}Let's be friends for tonight \nДавай мы на ночь станем друзьями{w=7}{nw}{/cps}"
+
+#блинк
+-----------------------------------------------------
+
+    show blink
+    $ renpy.pause(3)
+    hide blink
+    show unblink
+
+    show blinking
+
+#если кто-то хочет, чтобы во время закрытия глаз менялся фон и спрайты (закрыл глаза - одни спрайты. Открыл - уже другие) - используйте команду behind blink.
+----------------------------------------------------------
+
+    show blink
+    play sound sfx_scary_sting
+    scene bg int_dining_hall_night behind blink
+    show us laugh pioneer at left behind blink
+    hide blink
+    show unblink
+
+#продолжение строки
+-----------------------------------------------------
+
+    "дефки{nw}"
+    extend "пели и плясали"
+
+    play sound sfx_campus_door_rattle
+
+    play sound sfx_close_door_1
+
+#стоп музыка
+--------------------------------------------------
+
+    stop music fadeout 3
+
+#остановка текста
+--------------------------------------------------
+    {w}
+
+#косой текст
+------------------------------------------------------
+    {i} {/i}
+
+#рябь экрана
+----------------------------------------------------
+    show prologue_dream
+    hide prologue_dream
+
+#блюр
+------------------------------------------------------
+    #пишем в ините
+    #кастомный фон в блюре
+    image rajonchik_blurred = im.Blur("mods\mypics\img\bg\rajonchik.png," 1.5)
+    #стандартный фон в блюре
+    image ext_square_day_blurred = im.Blur("images/bg/ext_square_day.jpg", 1.5)
+        
+#блюр и чёрно-белый экран вместе
+-------------------------------------------------------
+    image no_tie_kitcat_exasted = im.Blur(im.Grayscale('mods/kitcat/img/cg/notie_kitcat.jpg'),1.5)
+          
+#плавный переход на режим новеллы
+-------------------------------------------------
+    scene black with dissolve2
+    $ renpy.pause(1.0, hard = True)
+    $ set_mode_nvl()
+    scene bg semen_room with fade3
+
+#книжный мод
+--------------------------------------------------
+    $ set_mode_nvl()
+    "тут текст"
+    $ set_mode_adv()
+
+#очистка текстового поля
+-----------------------------------
+    nvl clear
+
+#пропуск строки, создание абзаца
+------------------------------------------------
+    \n\n
+
+#паузы
+--------------------------------------------------
+    $ renpy.pause(3)
+
+    $ renpy.pause(2, hard = True)
+
+    scene black with dissolve
+    $ renpy.pause(2, hard = True)
+
+#трансформ, шаг назад
+----------------------------------------------
+    transform stepback(y):
+        easeout 0.1 zoom 1.0
+        ycenter 0.5
+
+    и потом, в коде:
+        stepback (0.55)
+
+#снежинки
+---------------------------------------
+    image a = SnowBlossom блаблаshow a:
+    ....rotate 38
+
+#пробуждение
+---------------------------------------------------
+    scene bg black with dissolve
+    show unblink
+    show bg int_house_of_mt_day
+
+#чёрный экран
+--------------------------------------------
+    scene bg black with dissolve
+
+#анимация
+--------------------------------------------------
+    image semaulya_kitcat:
+        "semaulya_kitcat_01" with dspr
+        0.6
+        "semaulya_kitcat_02" with dspr
+        0.3
+        "semaulya_kitcat_03" with dspr
+        0.6
+        "semaulya_kitcat_02" with dspr
+        0.3
+        repeat
+
+#выбор
+---------------------------------------------------------
+    menu:
+        "что за хрень? откуда тут Алена? читать отрывок и Лена-рута":
+            jump LenaProlog
+        "идем дальше, я догадался":
+            jump ContinueAlisa
+
+    play sound sfx_dinner_horn_processed
+
+    scene bg black with dissolve
+    $ renpy.pause(3)
+
+    gl "Опять вы можете повлиять на развитие сюжета! {w} К кому сядет Сёма?"
+    menu:
+        "к Лене":
+            jump Lena_Dinner01
+        "к Лене":
+            jump Lena_Dinner01
+        "к Лене":
+            jump Lena_Dinner01
+
+
+    play sound sfx_close_door_1
+
+    hide sl with easeoutleft
+
+    xpos 500 ypos -1200
+    easein 1.0 xpos 500 ypos 0
+    ease 0.5 ypos 15
+    ease 0.5 ypos 0
+    ease 0.5 ypos 15
+    ease 0.5 ypos 0
+    repeat
+
+    под спрайт, где это нужно
+    типа show dv:
+    ну и правей на четыре пробела то что выше
+
+    ba smile лыбящийся физрук
+    dv normal sport рыжевская в спортивке
+    mi sad (smile) dress far вока в платье
+
+    show mi sad dress far at cright with dissolve2
+
+    if not persistent.endings["uv_city"]:
+    $ persistent.endings["uv_city"] = True
+    if persistent.show_achievements:
+    $ show_achievement("uv_city")
+    $ achievement.grant("ACH_HAREM")
+
+#текст по всему экрану
+
+    show text("{color=#f00}{size=60}{b}О! Вот она!{/b}{/size}{/color}"):
+        xalign 0.5 yalign 0.5
+
+
+
+    screen Alisa_screen
+        tag Alisa_screen
+        modal False
+
+    add ""mods/GirlsVersusOD/Alisa_screen.png" xcenter 0.5 ycenter 0.5
+
+
+    scene black with dissolve
+    show text "ОД и девочки \nАлиса" with Pause(1.5)
+
+
+    show gltest_min:
+        xcenter 0.5 ycenter 0.5
+        pause 0.5
+        linear 0.5 xcenter 1.0
+        pause 0.5
+        linear 1.0 xcenter 0.0
+        pause 0.5
+        linear 0.5 xcenter 0.5
+
+        В блоке инициализации(init:) напишите следующее.
+    $ my_credits = "Строка титров 1.\n\nСтрока титров 2."
+
+#титры
+------------------------------------------------------
+    #Там, где во время игры собираетесь вывести титры, напишите следующее.
+    show credits my_credits:
+        xalign 0.5
+        ypos 1.3
+        linear 52.0 ypos -4.0
+    $ renpy.pause(15)
+
+    # Пропиши перед show credits это:
+    image credits = ParameterizedText(style = "credits", size = 50)
+
+#новая глава
+------------------------------------------------------
+    $ new_chapter(1, u"Одэ и девочки, Алиса, День 1")
+    show tag Alisa_screen:
+        xcenter 0.5 ycenter 0.5
+    image text = ParameterizedText(style = "Alisa_chapter")
+    show text "Алиса \nДень первый":
+        xpos 0.15 ypos 0.15
+    $ renpy.pause(3, hard = True)
+
+    $ renpy.pause(2)
+    scene black with fade
+    $ renpy.pause(2)
+    $ set_mode_nvl()
+    дальше появляется фон и собственно текст
+    
+#перевёрнутый спрайт
+---------------------------------------------------------
+    Show sprite:
+        xzoom -1.0
+
+#несколько баблов вместе:
+------------------------------------------------------------
+    call kitcat_bubble('sh', 'fright', "Ну? Чем займёмся?", 'dv', 'fleft', "Улька, ты собиралась нам что-то показать после ужина. Сейчас самое время. Или забыла?", 'us', 'center', "Ничего не забыла! Сейчас! Сидите тут, никуда не уходите, я скоро!")
+
+#Переход. Пишется вместо диссолв
+--------------------------------------------------------------
+    $ имя_эффекта = ImageDissolve("путь_и_имя_файла.jpg", 1.0, 50, reverse=False)
+
+#баблы
+--------------------------------------------------------
+    call eminluv_bubble('us', 'center', "")
+    call eminluv_bubble('dv', 'center', "")
+    call eminluv_bubble('sl', 'center', "")
+    call eminluv_bubble('un', 'center', "")
+    call eminluv_bubble('eminluv', 'center', "")
+    call eminluv_bubble('sh', 'center', "")
+
+#Вызов карты
+---------------------------------------------------------
+
+    #снимаем все зоны
+    $ disable_all_zones ()
+    #активируем те зоны, которые нужны
+    $ set_zone("medic_house")
+    $ set_zone("library")
+    $ set_zone("clubs")
+    $ set_zone("music_club")
+    $ set_zone("estrade")
+    #вызываем карту
+    $ show_map()
+
+
+# > Описание <
+# Позволяет остановить проигрывание аудио
+# а затем продолжить с места остановки
+
+# > Инструкции <
+# Пример рабочего кода приведён в `label test`
+# 1. Создать класс `PlayerPause` в коде
+# 2. Первым параметром обязательно указать канал ("music", "audio", "sound", "ambience").
+# 3. Использовать методы `.pause()` и `.resume()` соответственно
+#    Опционально можно указать время затухания
+# Метод `.getTime()` вернёт время с момента паузы, если имеется, в противном случае - 0.
+# Метод `.getFile()` вернёт имя файла, который был остановлен.
+# В данном случае у Вас будет больше возможностей для работы с аудио.
+-------------------------------------------------------------------
+init python:
+    mods["PlayerPause"] = "Пауза музыки и продолжение"
+    class PlayerPause:
+        def __init__(self, channel="music", fadein=2):
+            self.channel = channel
+            self.fadein = fadein
+            self.time = 0
+            self.file = renpy.music.get_playing(channel)
+        def pause(self, fadeout=2):
+            self.time = renpy.music.get_pos(self.channel)
+            renpy.music.stop(self.channel, fadeout)
+        def resume(self, fadein=2):
+            renpy.music.play("<from {}>{}".format(self.time, self.file), fadein=fadein)
+        def getFile(self):
+            return self.file
+        def getTime(self):
+            return self.time
+label test:
+    "Запуск проигрывания музыки..."
+    play music music_list["lets_be_friends"]
+    "Создание класса..."
+    $ player = PlayerPause("music")
+    "Пауза..."
+    $ player.pause(3)
+    "Что-то происходит в сценарии..."
+    "Продолжение..."
+    $ player.resume(2)
+    # $ renpy.music.play("<from {}>{}".format(player.getTime(), player.getFile()), fadein=3)
+    "Аудио будет воспроизведено с момента остановки..."
+    return
+
+
+#Слух, вот чёрный и белый экраны прописываются просто. А если нужен положим синий экран? Надо бегэшку делать?
+
+#Дмитрий 22:56
+
+#подобрать правильно цвет :D
+
+    screen ololo:
+        add Solid("#1100ff")
+
+#смена дня и ночи для спрайта:
+
+    image mz_kitcat_bukal = ConditionSwitch("persistent.sprite_time=='sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), "mods/kitcat/img/sp/mz_kitcat_bukal.png"), im.matrix.tint(0.94, 0.82, 1.0)), "persistent.sprite_time=='night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), "mods/kitcat/img/sp/mz_kitcat_bukal.png"), im.matrix.tint(0.63, 0.78, 0.82)), True, im.Composite((900, 108), (0, 0), "mods/kitcat/img/sp/mz_kitcat_bukal.png"))
+
+#как резать спрайты
+----------------------------------------------------------------------
+    - Far
+    Чтобы сделать спрайт из полноростового HD (1500x3500):
+    1. Сжимаем до 675x1575 (0.45)
+    2. Обрезаем по высоте до 1080
+
+    - Normal
+    Чтобы сделать спрайт из полноростового HD (1500x3500):
+    1. Вырезаем прямоугольник (x=0, y=250, w = 1500, h = 1800)
+    2. Сжимаем до 900x1080 (0.6)
+
+    - Close
+    Чтобы сделать спрайт из полноростового HD (1500x3500):
+    1. Сжимаем до 1125x2625 (0.75)
+    2. Обрезаем по высоте до 1080
+    3. Подвинуть спрайт вверх на 220
+
+
+    $ config.developer = True
+
+#другой цвет, надо поставить 
+    show gvod_text "{color=#sobstvenno, cvet}sobstvenno, text{/color}" #text заменил на gvod_text, чтобы не заменять уже существующий, прописанный в самом Renpy text
+
+#как прописывается ачивка?
+-------------------------------------------------
+    $ achiv_for_mod_tttt("achievement_sl_intro_bad_tttt") #Переменная: "achiv_for_mod_tttt" это твоя. Её меняешь под свои переменные
+
+#работа с альтом
+---------------------------------------------------
+    Тире — «0151» с Альтом
+    Троеточие - 0133
+
+    Включаем ключ Num Look, если он не активен (его светодиод должен светиться). Зажимаем клавишу «Alt» в правой части клавиатуры и не отпускаем ее. На цифровой клавиатуре набираем код символа. Перед введением цифрового кода необходимо нажать «+» и «0». Для открытия «французских» кавычек используется «0171», а для закрытия – «0187». Отпускаем «Alt» - и все готово
+
+
+
+
+
+
+
