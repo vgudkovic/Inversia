@@ -38,8 +38,8 @@ label prolog_inversia:
     "Безжизненный мрак залил собой всё вокруг."
 
     #Звук в тунеле "Пустое пространство с эхом"
-    play sfx ambience_camp_center_day fadein 4
-    play sound inversion_pisk fadein 2.0
+    play music ambience_camp_center_day fadein 2.0 loop
+    play sound inversion_pisk fadein 2.0 loop
 
     "В ушах застыл неописуемо сильный писк неведомого мне происхождения."
     "Быть может, где-то неподалёку что-то взорвалось. Или же меня хорошенько так огрели по голове."
@@ -50,6 +50,8 @@ label prolog_inversia:
     "Но желание узнать, что всё-таки со мной происходит, было слишком велико."
     "Потому было лишь вопросом времени, когда я попытаюсь распахнуть свои глаза, в надежде освободиться от оков мрака."
     "И как итог – ничего."
+    stop music fadeout 2
+    stop sound fadeout 2
     #dodel
 
 
@@ -84,8 +86,8 @@ label prolog_inversia:
     "Отчаяние постепенно овладевало мной. Но зато от терзающей меня паники не осталось и следа."
     
     # "выключить писк и дыхание"
-    play music inversion_pisk fadein 0.5
-    play music zvuk_tjazhelogo_dyhanija fadein 1.0
+    play music inversion_pisk fadein 0.5 loop
+    play sound zvuk_tjazhelogo_dyhanija fadein 1.0 loop
     "Чем дольше я вглядывался в мрак, тем больше мрак находил лазеек ко мне в душу."
     "Ещё и добавилось неприятное чувство в груди, словно меня что-то колит, усиливавшееся с каждым шагом..."
     
@@ -95,6 +97,8 @@ label prolog_inversia:
     "Совру, если скажу, что я не был этому рад. Я тут же бросился в сторону таинственного света, подарившего мне надежду."
     
     #Смена БГ"
+    stop music fadeout 1.0
+    stop sound fadeout 1.0
     scene polnosty_belaya_komnata with dissolve
     "Этот луч вывел меня прямиком в незнакомую мне белую комнату."
     zg "Здесь есть кто-нибудь?"
