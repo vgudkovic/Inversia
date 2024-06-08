@@ -20,6 +20,7 @@ init:
     image beliy_karidor_s_dvery = "mods/inversia/bg/beliy_karidor_s_dvery.jpg"
     image beliy_karidor = "mods/inversia/bg/beliy_karidor.jpg"
     image komnata_prolog = "mods/inversia/bg/komnata_prolog.jpg"
+    image bad_lager = "mods/inversia/bg/bad_lager.jpg"
 
     # Image
     image Achivement Prolog = "mods/inversia/images/Achivement Prolog.jpg"
@@ -213,6 +214,7 @@ label prolog_inversia:
     "Я уже хотел открыть её, но Саша вдруг села на кровать и отрешённо посмотрела куда-то вдаль."
     "Похоже, ей было тяжело собраться с мыслями."
     "Надо было помочь ей сконцентрироваться. Поэтому я подошёл к Саше и сел рядом."
+label vibor_prolog:
     sa "Я ничего не понимаю, одни вопросы и ни одного ответа. Только эти чёртовы загадки..."
     zg "Может, это проверка? Да и если мы остановимся на полпути, мы многое потеряем."
     zg "Я не буду настаивать. Если хочешь, ты можешь остаться."
@@ -355,7 +357,7 @@ label bad_end_inv:
     zg "Подожди..."
     "Только и успел промямлить я..."
     #"Звук выстрела"
-    play sfx vistrel_iz_pistoleta
+    play sound vistrel_iz_pistoleta
     #СМЭРТ :)
     $ renpy.pause (5)
     #И звук ачивки)
@@ -364,4 +366,6 @@ label bad_end_inv:
     with dspr
     $ renpy.pause (3)
     hide Achivement Prolog
+    $ renpy.pause (5)
+    jump vibor_prolog
     return 0
