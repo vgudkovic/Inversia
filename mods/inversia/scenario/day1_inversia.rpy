@@ -14,7 +14,8 @@ label day1_inversia:
     $ save_name = (u"Инверсия \n День 1")
     $ persistent.sprite_time = 'day'
 
-
+    $ renpy.pause(2.5)
+    
     scene black with fade2
     play music music_list["you_lost_me"]
     "Голова очень сильно болела. Я даже пошевелиться не мог — настолько невыносима была боль..." 

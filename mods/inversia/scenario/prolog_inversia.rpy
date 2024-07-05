@@ -1,13 +1,15 @@
 init:
 
 #---------------------------------------------------
-
+    # Персонажи 
     define zg = Character (u"Женя", color = "#00deff", what_color = "#f1d076")
     define nn = Character(u"Незнакомка", color = "#00deff", what_color = "#f1d076")
     define sa = Character (u"Саша", color = "#00deff", what_color = "#f1d076")
     define sa_zg = Character (u"Саша и Женя", color = "#ff00f7", what_color = "#f1d076")
-#-------------
-#sfx
+#-------------# 
+    # Переменные
+#-------------# 
+    #sfx
     $ inversion_pisk = "mods/inversia/sfx/inversion_pisk.mp3"
     # $ music inversion_Breath1 = "mods/inversia/music/inversion_Breath1.wav"
     $ inversion_shagi = "mods/inversia/sfx/shagi_s_ekhom.mp3"
@@ -15,17 +17,16 @@ init:
     $ zenskiu_plach = "mods/inversia/sfx/zenskiu_plach.mp3"
     $ vistrel_iz_pistoleta = "mods/inversia/sfx/vistrel_iz_pistoleta.mp3"
 
-#--------------
+#--------------#
+    # bg/cg
+    image karidor_so_svetom = "mods/inversia/bg/karidor_so_svetom.png"
+    image polnosty_belaya_komnata = "mods/inversia/bg/polnosty_belaya_komnata.jpg"
+    image beliy_karidor_s_dvery = "mods/inversia/bg/beliy_karidor_s_dvery.jpg"
+    image beliy_karidor = "mods/inversia/bg/beliy_karidor.jpg"
+    image komnata_prolog = "mods/inversia/bg/komnata_prolog.jpg"
+    image bad_lager = "mods/inversia/bg/bad_lager.jpg"
 
-    #bg/cg
-    image bg karidor_so_svetom = "mods/inversia/bg/karidor_so_svetom.png"
-    image bg polnosty_belaya_komnata = "mods/inversia/bg/polnosty_belaya_komnata.jpg"
-    image bg beliy_karidor_s_dvery = "mods/inversia/bg/beliy_karidor_s_dvery.jpg"
-    image bg beliy_karidor = "mods/inversia/bg/beliy_karidor.jpg"
-    image bg komnata_prolog = "mods/inversia/bg/komnata_prolog.jpg"
-    image bg bad_lager = "mods/inversia/bg/bad_lager.jpg"
-
-#--------------
+#--------------# 
     # Image
     image Achivement Prolog = "mods/inversia/images/Achivement Prolog.jpg"
 
@@ -34,9 +35,7 @@ init:
     # Sprites
 
     # sa - Саша 
-    # Дальность - далеко (Far)
-
-    # bent_arm - Согнутая рука
+# Дальность - далеко (Far) # bent_arm - Согнутая рука
     image InversiaMOD sa bent_arm angry pioneer far = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/bent_arm/sa_bent_arm_angry.png", (0,0), "mods/inversia/sprites/sa/far/bent_arm/sa_bent_arm_angry.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/bent_arm/sa_bent_arm_angry.png", (0,0), "mods/inversia/sprites/sa/far/bent_arm/sa_bent_arm_angry.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -107,7 +106,7 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/bent_arm/sa_bent_arm_unsmile.png", (0,0), "mods/inversia/sprites/sa/far/bent_arm/sa_bent_arm_unsmile.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/bent_arm/sa_bent_arm_unsmile.png", (0,0), "mods/inversia/sprites/sa/far/bent_arm/sa_bent_arm_unsmile.png") )
     
-#   Front - Лицом к герою
+# Дальность - далеко (Far) # Front - Лицом к герою
     image InversiaMOD sa front angry pioneer far = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_angry.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_angry.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_angry.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_angry.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -163,15 +162,15 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_smile2.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_smile2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_smile2.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_smile2.png") )
 
-    image InversiaMOD sa front surprised pioneer far = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised.png") )
+    image InversiaMOD sa front surprise pioneer far = ConditionSwitch(
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise.png") )
 
-    image InversiaMOD sa front surprised2 pioneer far = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised2.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised2.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised2.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised2.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprised2.png") )
+    image InversiaMOD sa front surprise2 pioneer far = ConditionSwitch(
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise2.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise2.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise2.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise2.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_surprise2.png") )
 
     image InversiaMOD sa front thoughtful pioneer far = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_thoughtful.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_thoughtful.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
@@ -183,7 +182,7 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_unsmile.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_unsmile.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/front/sa_front_unsmile.png", (0,0), "mods/inversia/sprites/sa/far/front/sa_front_unsmile.png") )
 
-# semi_sideways - Полу-боком
+# Дальность - далеко (Far) # semi_sideways - Полу-боком
     image InversiaMOD sa semi_sideways angry pioneer far = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/far/semi_sideways/sa_semi_sideways_angry.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/far/semi_sideways/sa_semi_sideways_angry.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -255,7 +254,7 @@ init:
     True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/far/semi_sideways/sa_semi_sideways_unsmile.png", (0,0), "mods/inversia/sprites/sa/far/semi_sideways/sa_semi_sideways_unsmile.png") )
 
 #-------- 
-# Normal - средняя дистанция
+# Normal - средняя дистанция # bent_arm - согнутая рука
     image InversiaMOD sa bent_arm angry pioneer normal = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/bent_arm/sa_bent_arm_angry.png", (0,0), "mods/inversia/sprites/sa/normal/bent_arm/sa_bent_arm_angry.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/bent_arm/sa_bent_arm_angry.png", (0,0), "mods/inversia/sprites/sa/normal/bent_arm/sa_bent_arm_angry.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -326,7 +325,7 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/bent_arm/sa_bent_arm_unsmile.png", (0,0), "mods/inversia/sprites/sa/normal/bent_arm/sa_bent_arm_unsmile.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/bent_arm/sa_bent_arm_unsmile.png", (0,0), "mods/inversia/sprites/sa/normal/bent_arm/sa_bent_arm_unsmile.png") )
     
-#   Front - Лицом к герою
+# Normal - средняя дистанция # Front - Лицом к герою
     image InversiaMOD sa front angry pioneer normal = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_angry.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_angry.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_angry.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_angry.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -382,15 +381,15 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_smile2.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_smile2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_smile2.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_smile2.png") )
 
-    image InversiaMOD sa front surprised pioneer normal = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised.png") )
+    image InversiaMOD sa front surprise pioneer normal = ConditionSwitch(
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise.png") )
 
-    image InversiaMOD sa front surprised2 pioneer normal = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised2.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised2.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised2.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised2.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprised2.png") )
+    image InversiaMOD sa front surprise2 pioneer normal = ConditionSwitch(
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise2.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise2.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise2.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise2.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_surprise2.png") )
 
     image InversiaMOD sa front thoughtful pioneer normal = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_thoughtful.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_thoughtful.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
@@ -402,7 +401,7 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_unsmile.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_unsmile.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_unsmile.png", (0,0), "mods/inversia/sprites/sa/normal/front/sa_front_unsmile.png") )
 
-# semi_sideways - Полу-боком
+# Normal - средняя дистанция # semi_sideways - Полу-боком
     image InversiaMOD sa semi_sideways angry pioneer normal = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/normal/semi_sideways/sa_semi_sideways_angry.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/normal/semi_sideways/sa_semi_sideways_angry.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -473,7 +472,7 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/semi_sideways/sa_semi_sideways_unsmile.png", (0,0), "mods/inversia/sprites/sa/normal/semi_sideways/sa_semi_sideways_unsmile.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/normal/semi_sideways/sa_semi_sideways_unsmile.png", (0,0), "mods/inversia/sprites/sa/normal/semi_sideways/sa_semi_sideways_unsmile.png") )
 #-----------
-# close - близко
+# close - близко # bent_arm - согнутая рука
     image InversiaMOD sa bent_arm angry pioneer close = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_angry.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_angry.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_angry.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_angry.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -544,7 +543,7 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_unsmile.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_unsmile.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_unsmile.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_unsmile.png") )
     
-#   Front - Лицом к герою
+# close - близко # Front - Лицом к герою
     image InversiaMOD sa front angry pioneer close = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_angry.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_angry.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_angry.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_angry.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -600,15 +599,15 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_smile2.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_smile2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_smile2.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_smile2.png") )
 
-    image InversiaMOD sa front surprised pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised.png") )
+    image InversiaMOD sa front surprise pioneer close = ConditionSwitch(
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise.png") )
 
-    image InversiaMOD sa front surprised2 pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised2.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised2.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised2.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised2.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprised2.png") )
+    image InversiaMOD sa front surprise2 pioneer close = ConditionSwitch(
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise2.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise2.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise2.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise2.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_surprise2.png") )
 
     image InversiaMOD sa front thoughtful pioneer close = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_thoughtful.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_thoughtful.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
@@ -620,7 +619,7 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_unsmile.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_unsmile.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_unsmile.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_unsmile.png") )
 
-# semi_sideways - Полу-боком
+# close - близко # semi_sideways - Полу-боком
     image InversiaMOD sa semi_sideways angry pioneer close = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
@@ -695,11 +694,7 @@ init:
 #-----------------------------------------------------------------------------------------------
     $ config.developer = True
     
-    $ mods["prolog_inversia"]=u"{font=mods/inversia/Sriracha.ttf}{size=36}{color=FFA500}Инверсия {/color}{/size}{/font}" # Название мода
-    # define zg = Character ('Женя', color = "#00deff", what_color = "#f1d076")
-    # define nn = Character ('Незнакомка', color = "#00deff", what_color = "#f1d076")
-    # define sa = Character ('Саша', color = "#00deff", what_color = "#f1d076")
-    # define achive_inversia = "mods/inversia/images/achive_inversia.png"
+    $ mods["prolog_inversia"]=u"{font=mods/inversia/Sriracha.ttf}{size=36}{color=2af90a}Инверсия {/color}{/size}{/font}" # Название мода
 
 label prolog_inversia:
     $ backdrop = "days"
@@ -714,17 +709,6 @@ label prolog_inversia:
     play sound inversion_pisk fadein 2.0 loop
 
     "В ушах застыл неописуемо сильный писк неведомого мне происхождения."
-    show InversiaMOD sa bent_arm angry pioneer far with dissolve
-    $ renpy.pause(1)
-    show InversiaMOD sa bent_arm angry pioneer close with dissolve
-    $ renpy.pause(1)
-    show InversiaMOD sa bent_arm angry pioneer normal with dissolve
-    $ renpy.pause(1)
-    show InversiaMOD sa bent_arm crying pioneer normal with dissolve
-    $ renpy.pause(1)
-
-    hide InversiaMOD sa  with dissolve
-    
     "Быть может, где-то неподалёку что-то взорвалось. Или же меня хорошенько так огрели по голове."
     "Пускай писк всё не унимался, ему не удалось помешать моим мыслям устремиться наружу."
     "Честно скажу, собственные мысли бесили меня не меньше, чем чёртов писк."
@@ -783,17 +767,20 @@ label prolog_inversia:
     "Этот луч вывел меня прямиком в незнакомую мне белую комнату."
     zg "Здесь есть кто-нибудь?"
     "Мой голос эхом пронёсся по загадочному помещению, отскакивая от светящихся белым стен."
-    "Прежде чем изучать комнату, я решил осмотреть своё тело. Может, удастся найти подсказку о том, кто я и как я сюда попал."
-    "На мне был надет не то халат, не то смирительная рубашка, неуклюже завязанная на поясе. На груди, к моей радости, был прикреплён небольшой бейджик."
-    "Так вот что кололо меня в грудь. Одной загадкой меньше."
+    "Прежде чем изучать комнату, я решил осмотреть своё тело.{w} Может, удастся найти подсказку о том, кто я и как я сюда попал."
+    "На мне был надет не то халат, не то смирительная рубашка, неуклюже завязанная на поясе." 
+    "На груди, к моей радости, был прикреплён небольшой бейджик."
+    th "Так вот что кололо меня в грудь.{w} Одной загадкой меньше."
     "На бейджике было фото незнакомого мне мужчины и, по видимому, его имя-фамилия."
     "Евгений Зощенко. Внизу также стояла дата — 2017 год."
     "Всякий раз, когда я пытался выбить из своей башки хоть капельку воспоминаний, в уши возвращался едкий писк, причиняя мне адскую боль."
-    "Я совершенно не знал, я ли это на фото, или же кто-то решил надо мной подшутить, прикрепив именной бейдж совершенно другого человека. В сознание вновь начали возвращаться вопросы."
-    th "Почему же я не помню ничего из своего прошлого? Неужели амнезия? Но из-за чего?!"
-    "Я поспешно проверил голову на наличие каких-либо ушибов и повреждений. Благо ничего найти мне не удалось."
-    "Ладно, в любом случае, стоя тут, я ничего не узнаю. Надо двигаться дальше. Может, мне удастся найти хоть что-то, что меня заинтересует."
-    "Или даже кого-то..."
+    "Я совершенно не знал, я ли это на фото, или же кто-то решил надо мной подшутить, прикрепив именной бейдж совершенно другого человека." 
+    "В сознание вновь начали возвращаться вопросы."
+    th "Почему же я не помню ничего из своего прошлого?{w} Неужели амнезия?{w} Но из-за чего?!"
+    "Я поспешно проверил голову на наличие каких-либо ушибов и повреждений.{w} Благо ничего найти мне не удалось."
+    th "Ладно, в любом случае, стоя тут, я ничего не узнаю." 
+    th "Надо двигаться дальше. Может, мне удастся найти хоть что-то, что меня заинтересует."
+    th "Или даже кого-то..."
     
     scene beliy_karidor with dissolve
     $ renpy.pause (1)
@@ -807,18 +794,18 @@ label prolog_inversia:
     "К счастью, моё старание окупилось, ведь в конце белоснежного коридора меня ждала дверь."
     "Любопытство снова взяло надо мной верх, и я распахнул её."
     
-
     #Смена БГ"
     scene komnata_prolog with dissolve
     "Передо мной открылся вид на таинственную комнату."
     "Я бы не сказал, что здесь было уютно, но необходимая мебель по типу кроватей, стульев и огромного стола, стоящего прямо в центре помещения, имелась."
-    "Удивительно, но я не сразу заметил девушку, стоящую у одной из кроватей. С души словно камень свалился..."
+    "Удивительно, но я не сразу заметил девушку, стоящую у одной из кроватей.{w} С души словно камень свалился..."
     
     # Появление саши
-    
+    show InversiaMOD sa semi_sideways thoughtful2 pioneer far with dissolve
     "Девушка выглядела огорчённой и даже озабоченной чем-то."
     "Но оно и понятно — я и сам напряжён сейчас."
     "На вид ей было всего лет шестнадцать-восемнадцать.. Совру, если скажу, что особой привлекательностью она не отличалась..." 
+    
     "Я невольно залюбовался ей."
     "Волосы оттенка тёмного, выдержанного коньяка. Лицо приятной овальной формы, чуть вытянутое."
     "Довольно высокая для девушки, при моих ста восьмидесяти пяти она лишь сантиметров на десять-двенадцать ниже меня, если смотреть навскидку."
@@ -838,54 +825,79 @@ label prolog_inversia:
     "Пора наладить контакт с незнакомкой."
     
     #Спрайт нормал
-    "Я аккуратно сделал пару шагов в её направлении. Мне совсем не хотелось испугать её."
+    show InversiaMOD sa semi_sideways thoughtful2 pioneer normal with dissolve
+    "Я аккуратно сделал пару шагов в её направлении.{w} Мне совсем не хотелось испугать её."
+    scene komnata_prolog with vpunch
+    show InversiaMOD sa front thoughtful pioneer normal with dissolve
     "Но как бы я не пытался двигаться бесшумно, девушка всё же услышала и резко повернулась ко мне. "
+    
     "Теперь испугался уже я."
     "Чего-чего, а такой быстрой реакции я не ожидал. А ведь я даже не единого звука не издал..."
     "Не знаю, чьим умениям я удивлялся больше — своим или девушки, но в комнате тем временем повисло неловкое молчание."
     "Я уж хотел было заговорить с ней, но так и не нашёл что сказать."
     "Однако девушка взяла ситуацию в свои руки."
+    show InversiaMOD sa front surprise pioneer normal with dissolve
+
     nn "Евгений..."
     "Неужели она знает кто я такой? Может, мне удастся выведать у неё что-то."
     zg "Мы знакомы?"
+    show InversiaMOD sa bent_arm tears_on_eyes pioneer normal with dissolve
+
     "Но девушка лишь показала пальцем себе на грудь, где располагался такой же бейдж, как и у меня."
-    "Честно говоря, я о нём уже и забыл. На её табличке было написано имя — Александра."
+    "Честно говоря, я о нём уже и забыл.{w} На её табличке было написано имя — Александра."
     "Фото совпадало с её внешностью. И раз уж она ничего не стала спрашивать, скорее всего, фото на моём бейдже тоже достоверно..."
-    "Я протянул девушке руку в знак знакомства. Она, недоверчиво посмотрев на меня, всё же ответила."
+    "Я протянул девушке руку в знак знакомства." 
+    
+    show InversiaMOD sa front thoughtful pioneer normal with dissolve
+    "Она, недоверчиво посмотрев на меня, всё же ответила."
     zg "Что ж, раз уж мы познакомились, не расскажешь, что здесь происходит?"
-    "Я уселся на стул возле стола и решил как следует расспросить девушку. Мне хотелось узнать как можно больше."
+    "Я уселся на стул возле стола и решил как следует расспросить девушку.{w} Мне хотелось узнать как можно больше."
+    
+    show InversiaMOD sa front unsmile pioneer normal with dissolve
     sa "Прости, но я без понятия..."
     zg "Как давно ты здесь?"
     sa "Я не считала. Может, день, а может, и больше..."
     "С каждой секундой, что я смотрел на лицо девушки, мне всё больше казалась её внешность знакомой."
     "Словно я видел её раньше, но никак не могу вспомнить, где..."
     zg "Белый бесконечный коридор, — ты тоже через него проходила?"
-    "Девушка еле заметно кивнула. Похоже, мы с ней в одной лодке."
+    "Девушка еле заметно кивнула.{w} Похоже, мы с ней в одной лодке."
     "И чёрт его знает, как из неё теперь выбираться."
+    hide InversiaMOD sa front unsmile pioneer normal with dissolve
     "Я решил осмотреть комнату. Мало ли удастся откопать что-то."
-    "Саша неотрывно сверлила меня взглядом, словно боясь потерять из виду. Это немного напрягало."
+    "Саша неотрывно сверлила меня взглядом, словно боясь потерять из виду.{w} Это немного напрягало."
     "Я решил нарушить воцарившуюся тишину."
+    show InversiaMOD sa front unsmile pioneer normal with dissolve
     zg "Ты осматривалась здесь?"
+    show InversiaMOD sa front surprise pioneer normal with dissolve
     sa "Немного..."
     zg "Что же, тогда буду рад, если поможешь."
     "На намёки и джентльменство время тратить я не хотел, а лишняя пара рук не помешает."
+    hide InversiaMOD sa front surprise pioneer normal with dissolve
+    "..."
     # Скрытие спрайта 
     
     # Появление спрайта
     $ renpy.pause(4)
+    show InversiaMOD sa front normal pioneer normal with dissolve
     "Вдвоём мы обыскали комнату вдоль и поперёк."
     "Много времени это, благо, не заняло, однако принесло свои плоды."
     "В руках у меня оказалась небольшая бумажка, которую я откопал в подушке одной из кроватей."
+    show InversiaMOD sa front smile pioneer normal with dissolve
     "Я сразу же показал Саше свою находку. У неё на лице промелькнула еле заметная улыбка."
+    show InversiaMOD sa front normal pioneer normal with dissolve
+    
     zg "Лишь за столом переговоров открывается истина."
     "Послание оказалось куда скромнее, чем я мог себе представить. Это разочаровало."
+    show InversiaMOD sa semi_sideways thoughtful pioneer normal with dissolve
     sa "Как думаешь, что это значит?"
     zg "Думаю, истина — это выход отсюда. А вот стол переговоров..."
     "Мы одновременно посмотрели на тот самый большой стол, что стоял посреди комнаты."
-    "Я хотел было поднять его, но у меня не получилось. Он был то ли прибит к полу, то ли был чертовски тяжёлым."
+    "Я хотел было поднять его, но у меня не получилось." 
+    "Он был то ли прибит к полу, то ли был чертовски тяжёлым."
     zg "Значит, есть что-то на нём..."
     "И ведь правда, на одной из его ножек располагалась незаметная кнопка, которую я еле смог нащупать."
     "После нажатия на неё на столе открылись непонятные ячейки, хаотично разбросанные по всей его площади."
+    show InversiaMOD sa semi_sideways shock pioneer normal with dissolve
     sa "Это рисунок!"
     "Воскликнула Саша. А ведь точно, его только нужно собрать..."
     
@@ -916,6 +928,8 @@ label prodolzhenie_inv:
     zg "Думаю, да, больше же некуда."
     "Я, конечно, не уверен, но куда ещё идти-то, в конце концов?"
     "Мы неспешно открыли дверь. Войдя в неё, мы снова оказались в тёмной комнате. {w} И стоило нам моргнуть, как..."
+    scene black with dissolve
+    show blink
     jump day1_inversia
 
 label bad_end_inv:
