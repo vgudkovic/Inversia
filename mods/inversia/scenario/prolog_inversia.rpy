@@ -19,12 +19,16 @@ init:
 
 #--------------#
     # bg/cg
+
+    image temnyi_koridor = "mods/inversia/bg/temnyi_koridor.webp"
     image karidor_so_svetom = "mods/inversia/bg/karidor_so_svetom.png"
     image polnosty_belaya_komnata = "mods/inversia/bg/polnosty_belaya_komnata.jpg"
     image beliy_karidor_s_dvery = "mods/inversia/bg/beliy_karidor_s_dvery.jpg"
     image beliy_karidor = "mods/inversia/bg/beliy_karidor.jpg"
     image komnata_prolog = "mods/inversia/bg/komnata_prolog.jpg"
     image bad_lager = "mods/inversia/bg/bad_lager.jpg"
+    image creepy_komnata = "mods/inversia/bg/creepy_komnata.jpg"
+    image chernaja_komnata_s_dvery = "mods/inversia/bg/chernaja_komnata_s_dvery.jpg"
 
 #--------------# 
     # Image
@@ -622,74 +626,74 @@ init:
 
 # close - близко # semi_sideways - Полу-боком
     image InversiaMOD sa semi_sideways angry pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_angry.png") )
     
     image InversiaMOD sa semi_sideways crying pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying.png") )
     
     image InversiaMOD sa semi_sideways crying2 pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_crying2.png") )
     
     image InversiaMOD sa semi_sideways embarrassed pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_embarrassed.png") )
     
     image InversiaMOD sa semi_sideways happy pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_happy.png") )
     
     image InversiaMOD sa semi_sideways normal pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_normal.png") )
  
     image InversiaMOD sa semi_sideways scared pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_scared.png") )
 
     image InversiaMOD sa semi_sideways shock pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_shock.png") )
 
     image InversiaMOD sa semi_sideways smile pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_smile.png") )
 
     image InversiaMOD sa semi_sideways surprise pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_surprise.png") )
 
     image InversiaMOD sa semi_sideways tears_on_eyes pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_tears_on_eyes.png") )
 
     image InversiaMOD sa semi_sideways thoughtful pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful.png") )
 
     image InversiaMOD sa semi_sideways thoughtful2 pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_thoughtful2.png") )
 
     image InversiaMOD sa semi_sideways unsmile pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((296, 486), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png") )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png", (0,0), "mods/inversia/sprites/sa/close/semi_sideways/sa_semi_sideways_unsmile.png") )
 
 
 #-----------------------------------------------------------------------------------------------
@@ -901,21 +905,28 @@ label prolog_inversia:
     show InversiaMOD sa semi_sideways shock pioneer normal with dissolve
     sa "Это рисунок!"
     "Воскликнула Саша. А ведь точно, его только нужно собрать..."
-    
+    ".{w=0.1}.{w=0.1}."
+
+    show InversiaMOD sa semi_sideways normal pioneer normal with dissolve
     "Отлично! Мне всё же удалось решить этот ребус, пускай я и потратил на это прилично времени."
     "После того как картинка собралась воедино, одна из стен сместилась вверх, открывая ещё одну загадочную дверь."
+    
+    show InversiaMOD sa semi_sideways unsmile pioneer normal with dissolve
     "Я уже хотел открыть её, но Саша вдруг села на кровать и отрешённо посмотрела куда-то вдаль."
     "Похоже, ей было тяжело собраться с мыслями."
     "Надо было помочь ей сконцентрироваться. Поэтому я подошёл к Саше и сел рядом."
 label vibor_prolog:
+    scene komnata_prolog with dspr
+    show InversiaMOD sa semi_sideways unsmile pioneer close with dissolve
     sa "Я ничего не понимаю, одни вопросы и ни одного ответа. Только эти чёртовы загадки..."
     zg "Может, это проверка? Да и если мы остановимся на полпути, мы многое потеряем."
     zg "Я не буду настаивать. Если хочешь, ты можешь остаться."
     "Девушка молча смотрела в пол и лишь спустя пару минут прошептала."
+    
+    show InversiaMOD sa front crying pioneer close with dissolve
     sa "Решай ты..."
     "Ей и правда тяжело сейчас, раз она позволила выбирать незнакомцу..."
     "Но если мы останемся здесь, то ни черта не добьёмся..."
-    
     
 #Выбор."
     menu:
@@ -926,27 +937,39 @@ label vibor_prolog:
 
 
 label prodolzhenie_inv:
+    ".{w=0.1}.{w=0.1}."
+    scene komnata_prolog with dspr
+    show InversiaMOD sa front embarrassed pioneer close with dissolve
     zg "Думаю, да, больше же некуда."
     "Я, конечно, не уверен, но куда ещё идти-то, в конце концов?"
     "Мы неспешно открыли дверь. Войдя в неё, мы снова оказались в тёмной комнате. {w} И стоило нам моргнуть, как..."
-    scene black with dissolve
     show blink
+    $ renpy.pause(0.5, hard=True)
+    scene black with dissolve
     jump day1_inversia
 
 label bad_end_inv:
     #"КАТАПУЛЬТНАЯ КОНЦОВКА"
+    scene komnata_prolog with dspr
+    show InversiaMOD sa front surprise2 pioneer close with dissolve
     zg "Пока ты останешься здесь."
     zg "Двигаться вперёд вместе слишком опасно."
     zg "Я пойду вперёд, разведаю обстановку."
     zg "Ты тут не пропадёшь, не амбар какой-нибудь всё-таки."
     zg "Полноценная комната."
     zg "Кровать, стол, может, и поесть где-нибудь, что-нибудь найдёшь."
+    
+    show InversiaMOD sa front unsmile pioneer close with dissolve
     "Повисла неловкая тишина."
     zg "Ну... Я пошёл."
     "Саша даже не подняла голову."
+    
+    hide InversiaMOD sa front unsmile pioneer close with dissolve
     "Я сделал несколько шагов к двери, и услышал сзади её тихий шёпот."
     sa "Я сгнию здесь..."
     "Я обернулся и удивлённо посмотрел на неё."
+    
+    show InversiaMOD sa front crying pioneer close with dissolve
     sa "Зарубки буду на стене делать..."
     sa "Ждать..."
     sa "Может, придёт кто..."
@@ -963,14 +986,18 @@ label bad_end_inv:
     zg "Мы же решили, вместе."
     stop music
     "Саша вскинула голову."
+
+    show InversiaMOD sa front angry pioneer close with dissolve
     sa "Это ты решил!"
     sa "Не я!"
     "С неожиданным гневом и отчаянием прокричала девушка."
     "Я почувствовал, что начинаю закипать в ответ."
+    show InversiaMOD sa front unsmile pioneer close with dissolve
     zg "Александра."
     "Как можно спокойней сказал я."
     zg "Соберись."
     zg "Перестань говорить глупости, всё с тобой будет хорошо."
+    show InversiaMOD sa front crying pioneer close with dissolve
     "Я поневоле начал язвить."
     "То ли оттого, что сам глубоко внутри был до чертиков напуган, то ли оттого, что в словах Саши я почувствовал... наглость?"
     th "Я в одной лодке с ней."
@@ -985,6 +1012,8 @@ label bad_end_inv:
     zg "Чего ты боишься, Сашенька?"
     zg "Думаешь, злые дяди вломятся с пистолетами, утащат куда?"
     zg "Может, оно и в самом деле к лучшему. Всяко получше будет, чем сидеть здесь в безысходности."
+    
+    show InversiaMOD sa front crying2 pioneer close with dissolve
     "Саша плакала уже навзрыд."
     "Я понимал, что стоит остановиться, я вёл себя как последний подонок."
     "Измываться над плачущей девушкой, перепуганной неизвестностью, окружающей её…"
@@ -994,20 +1023,27 @@ label bad_end_inv:
     "Но я не мог. Просто не мог."
     "Весь мой страх, вся злость на моё положение вырвались наружу и затопили рассудок."
     "Саша изо всех сил вцепилась тонкими пальчиками в простыню кровати, на которой сидела."
-    sa "Ты... ТЫ..."
+    sa "Ты.{w=0.1}.{w=0.1}.{w} ТЫ..."
     "Повторяла и повторяла она."
+
+    show InversiaMOD sa front unsmile pioneer close with dissolve
     "Затем девушка вдруг подняла голову, посмотрела на меня заплаканными глазами и совершенно спокойно сказала:"
     sa "Иди."
     sa "Я тут сама как-нибудь."
     sa "Справлюсь... Иди, раз уж собрался."
     "Она поёрзала на кровати."
     sa "Чая, как видишь, нет — попили бы на дорожку."
+
+    show InversiaMOD sa front embarrassed pioneer close with dissolve
     "Она усмехнулась."
     sa "Иди."
+
+    hide InversiaMOD sa front embarrassed pioneer close with dissolve
     "Забравшись с ногами на кровать и обхватив себя руками, она отвернулась от меня."
     "Я, не оглядываясь, пошёл прочь."
     "И мне было всё равно, смотрела ли она мне вслед."
     $ renpy.pause (2)
+    scene creepy_komnata with dissolve
     "Я уже практически добрался до двери, когда обратил внимание, что на противоположной от выхода стене виднеется еле заметный просвет."
     "Я не придал этому никакого значения, вместо этого предположив, что просвет остался после ремонта."
     $ renpy.pause (2)
@@ -1021,36 +1057,72 @@ label bad_end_inv:
     # Звук: оглушающий скрип
     play sound sfx_carousel_squeak
     "Неожиданно сзади раздался противный, калечащий уши скрип."
-    
+    scene chernaja_komnata_s_dvery with vpunch
     "Я молниеносно обернулся."
     "На месте просвета образовалась дверь!"
     "Готов поклясться, секунду назад тут не было ничего!"
+    show mi rage pioneer with dissolve
     "Из образовавшегося прохода вышла девушка."
     # По желанию добавить play sound sfx_scary_sting
     "Я оцепенел."
     "В её руке был пистолет!"
     "Каким-то внутренним чутьём я понял, что это настоящее боевое оружие."
     "Хоть незнакомка и держала его чуть небрежно, расслабленно, словно малыш держащий в руке хлопушку или сахарную вату."
+    hide mi rage pioneer with dissolve
+    show dv rage pioneer with dspr
     "А её лицо.."
+    hide dv rage pioneer with dspr
+    show sl angry pioneer with dspr
     "ЕЁ ЛИЦО!"
+    hide sl angry pioneer with dspr
+    show mz rage pioneer with dspr
     "Оно менялось."
+    hide mz rage pioneer with dspr
+    show mt rage pioneer with dspr
     "Каждую секунду!"
+    hide mt rage pioneer with dspr
+    show dv rage pioneer with dspr
     "Передо мной стояла рыжая девушка с задиристым взглядом."
+    hide dv rage pioneer with dspr
+    show us angry pioneer with dspr
     "Секунда — и лицо сменилось на совсем ещё девочку, с ясными синими глазами."
+    hide us angry pioneer with dspr
+    show un rage pioneer with dspr
     "Ещё секунда — печальное зеленоглазое лицо, полное вселенской тоски."
+    hide un rage pioneer with dspr
+    show sl angry pioneer with dspr
     "Миг — и её сменила валькирия, чьё лицо обрамляли золотые косы."
+    hide sl angry pioneer with dspr
+    show sh rage pioneer with dspr
     "Затем — и вовсе мужское лицо, строго смотрящее из под очков."
+    hide sh rage pioneer with dspr
+    show mz rage pioneer with dspr
     "Незнакомка нарушила молчание."
+    hide mz rage pioneer with dspr
+    show mz rage pioneer with dspr
     nn "Самое глупое решение из всех — разделиться."
+    hide mz rage pioneer with dspr
+    show mi rage pioneer with dspr
     "Она посмотрела на меня полубезумным взглядом."
+    hide mi rage pioneer with dspr
+    show sl angry pioneer with dspr
     nn "Ты что, кино не смотришь, зайчик?"
+    hide sl angry pioneer with dspr
+    show dv rage pioneer with dspr
     "Её взгляд прожигал меня насквозь. Мысли в голове словно окаменели."
+    hide dv rage pioneer with dspr
     $ renpy.pause (2)
 
+    show mi rage pioneer with dspr
     nn "Впрочем, ничего личного."
+    hide mi rage pioneer with dspr
     "Она со скоростью света вскинула пистолет."
+    show un rage pioneer with dspr
     zg "Подожди..."
+    hide un rage pioneer with dspr
     "Только и успел промямлить я..."
+    scene black with dissolve2
+    show blink 
     #"Звук выстрела"
     play sound vistrel_iz_pistoleta
     #СМЭРТ :)
@@ -1063,4 +1135,4 @@ label bad_end_inv:
     hide Achivement Prolog
     $ renpy.pause (5)
     jump vibor_prolog
-    return 09
+    return 0
