@@ -16,7 +16,10 @@ init:
     $ zvuk_tjazhelogo_dyhanija = "mods/inversia/sfx/zvuk_tjazhelogo_dyhanija.mp3"
     $ zenskiu_plach = "mods/inversia/sfx/zenskiu_plach.mp3"
     $ vistrel_iz_pistoleta = "mods/inversia/sfx/vistrel_iz_pistoleta.mp3"
-
+    $ zhenschina_kashleet = "mods/inversia/sfx/zhenschina_kashleet.mp3"
+    $ devushka_zevnula = "mods/inversia/sfx/devushka_zevnula.mp3"
+    $ paren_zevnul = "mods/inversia/sfx/paren_zevnul.mp3"
+    
 #--------------#
     # bg/cg
 
@@ -29,12 +32,48 @@ init:
     image bad_lager = "mods/inversia/bg/bad_lager.jpg"
     image creepy_komnata = "mods/inversia/bg/creepy_komnata.jpg"
     image chernaja_komnata_s_dvery = "mods/inversia/bg/chernaja_komnata_s_dvery.jpg"
+    
+    image ggroom = "mods/inversia/bg/ggroom.jpg"
+    image ext_sky_7dl = "mods/inversia/bg/ext_sky_7dl.jpg"
+    
+    #Склад закрытый
+    image ext_stock_day = "mods/inversia/bg/ext_stock_day.jpg"
+    #Склад открытый 
+    image ext_stock_near_store2 = "mods/inversia/bg/ext_stock_near_store2.jpg"
 
 #--------------# 
     # Image
     image Achivement Prolog = "mods/inversia/images/Achivement Prolog.jpg"
 
-
+#--------------# 
+    # Трансформы / анимации
+        #Бег. Задать в коде используем фон и at running. Scene bg ext_house_of_mt_day at running with dissolve
+    transform running:
+        pos (0,0)
+        linear 0.1 pos (-3,-1)
+        linear 0.1 pos (0,0)
+        pos (0,0)
+        linear 0.1 pos (3,-1)
+        linear 0.1 pos (0,0)
+        repeat
+    #Анимация БЫСТРОГО бега
+    transform running2:
+        pos (0,0)
+        linear 0.1 pos (-5,-1)
+        linear 0.1 pos (0,0)
+        pos (0,0)
+        linear 0.1 pos (5,-1)
+        linear 0.1 pos (0,0)
+        repeat
+    
+    transform walking_inv:
+        block:
+            zoom 1.1 xcenter 0.5 ycenter 0.5
+        block:
+            ease 0.4 xoffset 0 yoffset 0
+            ease 0.4 xoffset 15 yoffset 25
+            ease 0.4 xoffset 0 yoffset 0
+            ease 0.4 xoffset -10 yoffset 25
 #--------------
     # Sprites
 
@@ -579,10 +618,10 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_happy.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_happy.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_happy.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_happy.png") )
 
-    image InversiaMOD sa front close pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_close.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_close.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_close.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_close.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_close.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_close.png") )
+    image InversiaMOD sa front normal pioneer close = ConditionSwitch(
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_normal.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_normal.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_normal.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_normal.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_normal.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_normal.png") )
 
     image InversiaMOD sa front scared pioneer close = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/front/sa_front_scared.png", (0,0), "mods/inversia/sprites/sa/close/front/sa_front_scared.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
@@ -726,7 +765,8 @@ label prolog_inversia:
     #dodel
 
     #play music inversion_Breath1 
-    "Всё та же бесконечная пустота, что словно засасывала меня всё глубже и глубже. Сколько бы я не пытался, результат был один."
+    "Всё та же бесконечная пустота, что словно засасывала меня всё глубже и глубже." 
+    "Сколько бы я не пытался, результат был один."
     "Любопытство отошло на второй план. Теперь моим сознанием правили ужас и страх..."
     "И нет, дело даже не в том, что вокруг меня царит кромешный мрак. С этим, как раз, я более чем смирился."
     "Вопрос в другом: кто же всё-таки этот \"Я\"?"
@@ -973,10 +1013,10 @@ label bad_end_inv:
     sa "Зарубки буду на стене делать..."
     sa "Ждать..."
     sa "Может, придёт кто..."
-    play music zenskiu_plach fadein 3
-    "Саша всхлипнула."
 
     #"“звук: женские всхлипывания”"
+    play music zenskiu_plach fadein 3
+    "Саша всхлипнула."
     sa "Спасёт..."
     zg "Саша..."
     zg "Ты останешься здесь, так безопаснее. Я пойду вперёд. Узнаю что к чему."
@@ -1030,7 +1070,7 @@ label bad_end_inv:
     "Затем девушка вдруг подняла голову, посмотрела на меня заплаканными глазами и совершенно спокойно сказала:"
     sa "Иди."
     sa "Я тут сама как-нибудь."
-    sa "Справлюсь... Иди, раз уж собрался."
+    sa "Справлюсь...{w=1} Иди, раз уж собрался."
     "Она поёрзала на кровати."
     sa "Чая, как видишь, нет — попили бы на дорожку."
 
