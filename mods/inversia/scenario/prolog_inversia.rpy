@@ -1,5 +1,6 @@
 init:
-
+    $ renpy.music.register_channel("sound2", "ambience", True)
+    $ renpy.music.register_channel("sfx", "sound3", loop=False, True)
 #---------------------------------------------------
     # Персонажи 
     define zg = Character (u"Женя", color = "#00deff", what_color = "#f1d076")
@@ -19,6 +20,8 @@ init:
     $ zhenschina_kashleet = "mods/inversia/sfx/zhenschina_kashleet.mp3"
     $ devushka_zevnula = "mods/inversia/sfx/devushka_zevnula.mp3"
     $ paren_zevnul = "mods/inversia/sfx/paren_zevnul.mp3"
+    $ zensky_smekh = "mods/inversia/sfx/zensky_smekh.mp3"
+    $ muzhskoi_smekh = "mods/inversia/sfx/muzhskoi_smekh.mp3"
     
 #--------------#
     # bg/cg
@@ -74,6 +77,7 @@ init:
             ease 0.4 xoffset 15 yoffset 25
             ease 0.4 xoffset 0 yoffset 0
             ease 0.4 xoffset -10 yoffset 25
+        repeat
 #--------------
     # Sprites
 
@@ -743,6 +747,7 @@ init:
 label prolog_inversia:
     $ backdrop = "days"
     $ save_name = (u"Инверсия \n Пролог.")
+    $ prolog_time()
     $ persistent.sprite_time = 'day'
     
     scene black with dissolve
