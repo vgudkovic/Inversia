@@ -1,6 +1,6 @@
 init:
-    $ renpy.music.register_channel("sound2", "ambience", True)
-    $ renpy.music.register_channel("sfx", "sound3", loop=False, True)
+    # $ renpy.music.register_channel("ambience", "sound2", True)
+    # $ renpy.music.register_channel("sfx", "sound3", True)
 #---------------------------------------------------
     # Персонажи 
     define zg = Character (u"Женя", color = "#00deff", what_color = "#f1d076")

@@ -76,7 +76,7 @@ label day1_inversia:
     stop music
 
     #*звук:ветер*
-    play music ambience_cold_wind_loop fadein 2.0
+    play voice ambience_cold_wind_loop fadein 2.0
     #Фон: Дорога*
     scene bg ext_road_day with dissolve
     th "Как только мы вышли из автобуса, нас чуть не сбил с ног сильный порыв ветра."
@@ -123,6 +123,7 @@ label day1_inversia:
         linear 0.5 blur 10
         linear 1 blur 0 
     "Ручка сильно проржавела и рассыпалась. Я отдёрнул руку и отбежал назад."
+    play sound sfx_scary_sting
     scene bad_lager:
         zoom 2 xcenter 0.5 ycenter 0.5
         ease 0.3 zoom 1 xcenter 0.5 ycenter 0.5
@@ -147,11 +148,11 @@ label day1_inversia:
 
     #*April Rain-Chiral Allergy**" dodel
     show InversiaMOD sa front scared pioneer close:
-        linear 1 zoom 2 xcenter 0.5 ycenter 0.5
+        ease 1 zoom 2 xcenter 0.5 ycenter 0.5
         blur 100
         linear 0.5 blur 10
         linear 1 blur 0 
-        lianer 1.5 zoom 1 xcenter 0.5 ycenter 0.5
+        ease 1 zoom 1 xcenter 0.5 ycenter 0.5
     "Я резко открыл глаза. Тут же взглянув на ворота, я увидел, что они снова в порядке."
     sa "Что случилось с тобой?"
     zg "Походу, этот лагерь меня невзлюбил..."
@@ -172,7 +173,7 @@ label day1_inversia:
     sa "Они исходят из-за ворот."
     stop sound fadeout 0.5
 
-    play sfx sfx_carousel_squeak 
+    play sound sfx_carousel_squeak 
     "Шаги стихли, и ворота открылись. "
 
     #*Постепенное P и такое же постепенное f Timid Girl**" # vopr
@@ -190,7 +191,6 @@ label day1_inversia:
     slp "Привет, вы, наверное, нове..." 
     # *кашель* 
     play sound zhenschina_kashleet
-    $ renpy.pause(3, hard=True)
     show sl normal pioneer:
         ease 0.2 ycenter 0.55
         ease 0.6 ycenter 0.50
@@ -214,7 +214,7 @@ label day1_inversia:
     "Хоть она и объяснила очень доходчиво, я ничего не понял. Думаю, не стоит задерживать эту барышню. "
     slp "Я побежала, меня ждут дела, удачи вам!"
     #*Звуки ворот**"
-    play sfx sfx_carousel_squeak 
+    play sound sfx_carousel_squeak 
 
     show sl smile pioneer close:
         ease 1 xcenter 1.3
@@ -233,12 +233,13 @@ label day1_inversia:
     "Я показал на ворота.{w} Саша кивнула." 
     # Звук испарения или чёт еще для автобуса
     play sound sfx_put_sugar_cart
+    $ renpy.pause(1)
     
     #Задник ворот без автобуса*"
     scene bg ext_no_bus with dissolve
     extend " Вдруг мы услышали шум и оглянулись — автобус исчез."
     
-    play sfx sfx_suspence_bang
+    play sound sfx_suspence_bang
     scene ext_camp_entrance_day with dissolve
     show InversiaMOD sa front shock pioneer close with dissolve
     sa "Художественный фильм.{w=0.2}.{w=0.2}."
@@ -586,9 +587,9 @@ label napugal_day1:
     play music music_list['eat_some_trouble'] fadein 1 
     "Посидев так минут пять, а может, и меньше, я увидел как куст возле нашего домика задёргался."
     "Я незаметно подкрался к нему сзади. "
-    show us surprise with dissolve
     $ renpy.pause(0.5)
     scene bg ext_house_of_sl_day at running2 with dissolve
+    show us surp2 pioneer close with dissolve
     "Прыгнув в заросли с криком «Лови Штирлица!», я выбил наблюдателя с его позиции, и мы, как бочка, покатились по дорожке."
     
     # "always ready"
@@ -597,7 +598,10 @@ label napugal_day1:
     $ renpy.pause(1)
     scene bg ext_house_of_sl_day at running2 with dissolve
     show us shy pioneer close with dissolve
+    $ renpy.pause(1.5)
+    
     scene bg ext_house_of_sl_day with dissolve
+    show us shy pioneer close with dspr
     "Когда мы наконец остановились, я увидел на себе девушку." 
     "Точнее, девочку, с красными, как огонь, волосами и голубыми глазами."
     usp "Подкрадываться не хорошо!"
@@ -685,7 +689,7 @@ label beach_inv:
     scene bg ext_beach_day at walking_inv with dissolve
     $ renpy.pause(0.5)
     scene bg ext_beach_day with dspr
-    play ambience ambience_lake_shore_day fadein 4
+    play voice ambience_lake_shore_day fadein 4
     "Когда я пришёл туда, на пляже никого не было."
     "Я увидел шезлонг и тут же лёг на него."
     "А солнце уже не так сильно светит..."
@@ -706,11 +710,12 @@ label beach_inv:
     show dv shocked pioneer close with dspr
     extend " перехватил её левую руку и крепко схватил за горло."
     dvp "Отпусти!"
-    show dv cry pioneer close with dissolve
     "Тоненько, как мышка, пропищала девушка, не теряя, впрочем, ноток агрессии в голосе." 
     th "Похоже, напористость — часть её характера."
+    show dv angry pioneer close with dissolve
     dvp "Пусти, бл*!!"
     $ renpy.pause (2)
+    show dv cry pioneer close with dissolve
     dvp "Больно, пусти..."
     $ renpy.pause (2)
     "Голос девочки превратился в хрип."
@@ -749,7 +754,7 @@ label beach_inv:
     show dv grin pioneer with dspr
     "И с невообразимым, одновременно пошловатым и злым выражением лица прошипела"
     dv "Или в колхоз, быков за яйца ловить!"
-    play ambience zensky_smekh
+    play sound zensky_smekh
     "Девушка набрала в грудь воздуха и звонко засмеялась."
     dv "Или коров, за вымя..."
     zg "Зачем?"
@@ -758,11 +763,11 @@ label beach_inv:
     show dv smile pioneer with dspr
     dv "Что «зачем»?"
     zg "Зачем корову,{w=0.5} за вымя..."
-    play ambience zensky_smekh
+    play sound zensky_smekh
     dv "Алиса засмеялась пуще прежнего, до слёз на огненных глазах, к счастью, уже от смеха."
     dv "Да кто тебя знает, для дурика такого агрессивного — самое то!"
     "Я решил, что лучше будет промолчать."
-    play ambience muzhskoi_smekh
+    play sound muzhskoi_smekh
     "Но всё же не удержался и хихикнул Алисе в ответ."
 
     show dv grin pioneer with dspr
@@ -777,10 +782,14 @@ label beach_inv:
     play sound sfx_light_candle
     "До меня донёсся лёгкий, почти невесомый, «Как Алисин смех», — мелькнуло в голове, щелчок зажигалки."
     "Моего носа достиг запах крепкого табака."
-    show dv sad pioneer far with dissolve
+    show dv sad pioneer far:
+        xcenter 0.90 ycenter 0.5
     dv "Псих."
     "Бросила Алиса, посмотрела на меня через плечо" 
-    hide dv normal pioneer far with dissolve
+    show dv normal pioneer far:
+        xcenter 0.90 ycenter 0.5
+        ease 1 xcenter 1.50 ycenter 0.5
+    
     extend " и, напоследок сверкнув глазами, не оглядываясь, пошла прочь."
     "Я же остался и продолжил смотреть на речку, сидя на песке."
     "Лишь изредка украдкой посматривая в спину удаляющейся рыжеволосой."
@@ -788,8 +797,8 @@ label beach_inv:
     
     # **YOU LOST ME**
     play music music_list["you_lost_me"]
-    "Вскоре я услышал шорох кустов."
     play sound sfx_hiding_in_bush
+    "Вскоре я услышал шорох кустов."
     th "Наверное, Алиса хочет отомстить мне."
     "Резко подойдя к шумевшим зарослям, я успел увидеть только небольшой силуэт, похожий на Алисин, — но это могла быть и не она."
     "Осмотрев кусты и не найдя ничего, я уж было направился обратно в лагерь, как вдруг.{w=0.2}.{w=0.2}."
@@ -1107,7 +1116,7 @@ label issledoval:
     "Нужно будет рассказать всё Саше."
     "**нет музыки**"
     "Не успел: (основное)"
-    "** I Want To Play**"
+    # ** I Want To Play**
     "Я хотел было спрятаться в кусты, но трава была настолько скользкая, что я лишь упал, распластавшись на ней. Тут на пирс вышла Алиса."
     dv "Чё разлёгся?"
     "Ж- Да вот, упал."
