@@ -6,9 +6,26 @@ init:
     define zg = Character (u"Женя", color = "#00deff", what_color = "#f1d076")
     define nn = Character(u"Незнакомка", color = "#00deff", what_color = "#f1d076")
     define sa = Character (u"Саша", color = "#00deff", what_color = "#f1d076")
-    define sa_zg = Character (u"Саша и Женя", color = "#ff00f7", what_color = "#f1d076")
+    define sa_zg = Character (u"Саша и Женя", color = "#14b21b", what_color = "#f1d076")
+    define kl = Character (u"Кловер", color = "#240fc4", what_color = "#f1d076")
+    define klp = Character (u"Незнакомка", color = "#240fc4", what_color = "#f1d076")
 #-------------# 
     # Переменные
+    $ dv_och = 0
+    $ obhodnoi = 0
+
+    $ beach_inv_day1 = False
+    $ boat_station_day1_inv = False
+    $ vse_oboshol_d1_inv = False
+    $ sport_area2_inv = False
+
+    $ napugal_us = None
+    $ pudrenitsa = False
+    $ obratil_vnimanie_inv = False
+    $ first_playrhrough = False
+    $ obhodnoi_odin = None
+
+    $ config.developer = True
 #-------------# 
     #sfx
     $ inversion_pisk = "mods/inversia/sfx/inversion_pisk.mp3"
@@ -24,7 +41,7 @@ init:
     $ muzhskoi_smekh = "mods/inversia/sfx/muzhskoi_smekh.mp3"
     
 #--------------#
-    # bg/cg
+# bg/cg
 
     image temnyi_koridor = "mods/inversia/bg/temnyi_koridor.webp"
     image karidor_so_svetom = "mods/inversia/bg/karidor_so_svetom.png"
@@ -44,13 +61,27 @@ init:
     #Склад открытый 
     image ext_stock_near_store2 = "mods/inversia/bg/ext_stock_near_store2.jpg"
 
-#--------------# 
-    # Image
-    image Achivement Prolog = "mods/inversia/images/Achivement Prolog.jpg"
+    image ext_houses_night = "mods/inversia/bg/ext_houses_night_7dl.jpg"
+
+
+
 
 #--------------# 
-    # Трансформы / анимации
-        #Бег. Задать в коде используем фон и at running. Scene bg ext_house_of_mt_day at running with dissolve
+    # Image
+    image Achivement Prolog = "mods/inversia/image/Achivement Prolog.jpg"
+    # Туман
+    image tuman1_inv = "mods/inversia/image/tuman1_inv.png"
+    
+    # Саша - Слайм
+    #   image slime_sasha_inv = "mods/inversia/image/Slime Sasha.png"
+    image slime_sasha_inv = ConditionSwitch(
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((348, 1080), (0,0), "mods/inversia/image/Slime Sasha.png", (0,0), "mods/inversia/image/Slime Sasha.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((348, 1080), (0,0), "mods/inversia/image/Slime Sasha.png", (0,0), "mods/inversia/image/Slime Sasha.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((348, 1080), (0,0), "mods/inversia/image/Slime Sasha.png", (0,0), "mods/inversia/image/Slime Sasha.png") )
+
+#--------------# 
+# Трансформы / анимации
+    #Бег. Задать в коде используем фон и at running. Scene bg ext_house_of_mt_day at running with dissolve
     transform running:
         pos (0,0)
         linear 0.1 pos (-3,-1)
@@ -746,7 +777,7 @@ init:
 
 label prolog_inversia:
     $ backdrop = "days"
-    $ save_name = (u"Инверсия \n Пролог.")
+    $ save_name = (u"Инверсия. \nПролог.")
     $ prolog_time()
     $ persistent.sprite_time = 'day'
     
