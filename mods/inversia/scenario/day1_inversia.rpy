@@ -48,13 +48,14 @@ label day1_inversia:
     sa "Ты в окно глянь."
     sa "Прямо пейзаж неизвестного художника."
 
-    scene bg ext_road_day with dissolve
+    show bg ext_road_day with dissolve
     "Посмотреть в самом деле нашлось на что. За окном ярко светило жаркое, летнее солнце." 
     "После жуткой белизны, откуда мы с Сашей вырвались, ласковый свет солнышка был настоящим бальзамом на душу." 
     "Впереди виднелось шоссе, уходящее вдаль, куда-то за горизонт."
     "Похоже, по нему мы и добрались сюда." 
+    hide bg ext_road_day with dissolve
     
-    scene bg ext_camp_entrance_day with dissolve
+    show bg ext_camp_entrance_day with dissolve
     "Рядом расположились ворота."
     "Детский лагерь? На их страже стояли две статуи, изображающие детей в приметной, запоминающейся униформе."
     "В памяти всплыли слова. Пионеры. Пионерия." 
@@ -142,13 +143,18 @@ label day1_inversia:
     hide blink
     show unblink
 
+
+
     #*April Rain-Chiral Allergy**" dodel
+    # Появление саши после Фона
+    $ renpy.pause (4, hard=True)
     show InversiaMOD sa front scared pioneer close:
-        ease 1 zoom 2 xcenter 0.5 ycenter 0.5
+        # ease 0.5 zoom 2 
+        xcenter 0.5 ycenter 0.5
         blur 100
-        linear 0.5 blur 10
-        linear 1 blur 0 
-        ease 1 zoom 1 xcenter 0.5 ycenter 0.5
+        linear 1 blur 10
+        linear 0.5 blur 0 
+        # ease 0.5 zoom 1 xcenter 0.5 ycenter 0.5
     "Я резко открыл глаза. Тут же взглянув на ворота, я увидел, что они снова в порядке."
     sa "Что случилось с тобой?"
     zg "Походу, этот лагерь меня невзлюбил{w=0.3}.{w=0.3}.{w=0.3}."
@@ -201,11 +207,11 @@ label day1_inversia:
     slp "Что же, тогда добро пожаловать!"
     show sl smile pioneer close with dspr
     "Она одарила нас широкой, задорной улыбкой. "
-    show InversiaMOD sa semi_sideways thoughtful pioneer close
+    show InversiaMOD sa semi_sideways thoughtful pioneer close with dissolve
     sa "А нам куда идти? Мы тут впервые."
     slp "Вам нужно к Ольге Дмитриевне. Сейчас идёте прямо, доходите до площади, дальше будут домики. Ну, спрóсите там у других, где Ольга Дмитриевна."
     slp "А мне надо идти, вам понятно?"
-    show InversiaMOD sa semi_sideways smile pioneer close
+    show InversiaMOD sa semi_sideways smile pioneer close with dspr
     sa_zg "Да{w=0.3}.{w=0.3}.{w=0.3}. вроде." #dodel
     "Хоть она и объяснила очень доходчиво, я ничего не понял. Думаю, не стоит задерживать эту барышню. "
     slp "Я побежала, меня ждут дела, удачи вам!"
@@ -215,11 +221,12 @@ label day1_inversia:
     show sl smile pioneer close:
         ease 1 xcenter 1.3
         pause 1.0
+    show InversiaMOD sa semi_sideways smile pioneer close with dspr
     hide sl smile pioneer close with dissolve
     "И она скрылась за воротами, её золотые косы весело развевались под летним ветерком." 
     "Мы с Сашей подошли ближе. Ручки на воротинах были целыми."
     
-    show InversiaMOD sa semi_sideways thoughtful2 pioneer close
+    show InversiaMOD sa semi_sideways thoughtful2 pioneer close with dspr
     sa "Всё это о-о-очень странно{w=0.3}.{w=0.3}.{w=0.3}."
     zg "Мне тоже не нравится это место, но бежать нам некуда." 
     zg "Я не вижу другого выхода, кроме как идти туда."
@@ -232,10 +239,11 @@ label day1_inversia:
     $ renpy.pause(1)
     
     #Задник ворот без автобуса*"
-    scene bg ext_no_bus with dissolve
+    show bg ext_no_bus with dissolve
     extend " Вдруг мы услышали шум и оглянулись — автобус исчез."
     
     play sound sfx_suspence_bang
+    hide bg ext_no_bus with dspr
     scene ext_camp_entrance_day with dissolve
     show InversiaMOD sa front shock pioneer close with dissolve
     sa "Художественный фильм.{w=0.2}.{w=0.2}."
@@ -255,10 +263,12 @@ label day1_inversia:
     #*Farewell to the past**"
     play music music_list['farewell_to_the_past_full'] 
     #фон: Остановка (без автобуса)*"
-    scene bg ext_no_bus with dissolve
+    show bg ext_no_bus with dissolve
     "Автобус исчез, конечно, неизвестно куда и как"
-    scene bg ext_road_day with dissolve
+    hide bg ext_no_bus with dissolve
+    show bg ext_road_day with dissolve
     extend " , но при этом он открыл прекраснейший вид на поле.{w} Вид просто невероятный!"
+    hide bg ext_road_day with dissolve
     #поворот к Саше и фон ворот*"
     scene ext_camp_entrance_day with dissolve
     show InversiaMOD sa front smile pioneer close with dissolve
@@ -275,7 +285,7 @@ label day1_inversia:
     zg "Похоже, здесь кружки по интересам обосновались."
     sa "Того же мнения, но нам надо идти к"
     play sound devushka_zevnula volume 0.8
-    extend " О-О-О-Ольге."
+    extend " О{w=0.1}-О{w=0.1}-О{w=0.1}-Ольге."
     "Зевок оказался заразным"
     play sound paren_zevnul volume 0.8
     extend ", и я тоже подхватил его. Мы пошли дальше."
@@ -337,19 +347,21 @@ label day1_inversia:
     "Саша немного расслабилась."
     sa "Да уж, чем строить безосновательные теории, давай немного посидим отдохнём."
     zg "Пока остаётся только это{w=0.3}.{w=0.3}.{w=0.3}."
-    #Фон: Скамья с Сашей*" Доработать
+        #Фон: Скамья с Сашей*" Доработать
+    show None_BG_INV with dissolve
     "Сев на скамейку, мы наконец расслабились, и Саша спросила:"
     sa "Что же с нами такое произошло, что мы забыли себя? Почему?"
-    show ext_sky_7dl with dissolve
+    #   show ext_sky_7dl with dissolve
     zg "Да кто его знает{w=0.3}.{w=0.3}.{w=0.3}."
     "Ответил я, глядя на небо."
     zg "Может, мы находимся в коме и видим своё подсознание, а может, мы умерли и сейчас в раю." 
     "Всё может быть, всё может быть{w=0.3}.{w=0.3}.{w=0.3}."
-    hide ext_sky_7dl with dissolve
+    #   hide ext_sky_7dl with dissolve
     #тёмный экран* *Фон: спящая Саша на скамье.* " Доработать
     "Мы сидели так, наверное, уже минут десять – пятнадцать, я то и дело поглядывал на Сашу."
     "Она мирно спала. Выглядело это умилительно. "
-    "Похоже, что наше приключение её сильно измотало."
+    th "Похоже, что наше приключение её сильно измотало."
+    hide None_BG_INV with dissolve
     "Я тоже был измотан, однако в сон не клонило."
     "Поэтому я решил изучить площадь. "
     "Большая статуя видного деятеля этого лагеря вроде бы{w=0.3}.{w=0.3}.{w=0.3}. "
@@ -368,7 +380,8 @@ label day1_inversia:
     play music music_list['awakening_power'] fadein 1
     "Позади статуи кто-то ругался — а именно две девушки, если судить по голосам." 
     "Краем глаза я заметил, что Саша тоже проснулась. "
-    #Появление ОД и Алисы* Фон ссоры Алисы и ОД
+    #   Появление ОД и Алисы* Фон ссоры Алисы и ОД
+    show None_BG_INV with dissolve
     "Обойдя статую, мы увидели этих двоих. "
     "Одна из них — старшая — скорее всего, была вожатой, а та, что помладше, — пионеркой." 
     "Мы подошли поближе и смогли услышать разговор"
@@ -383,13 +396,15 @@ label day1_inversia:
     stop music fadeout 0.5
     #Алиса уходит, остаётся ОД*
     $ renpy.pause(0.5)
+    hide None_BG_INV with dissolve
     
     #My Daily Life
     play music music_list['my_daily_life'] fadein 1
     "Насупившись, она пошла мимо нас в неизвестном направлении — скорее всего, к той самой столовой." 
     "Мы подошли к Ольге."
     scene bg ext_square_day with dissolve
-    show mt sad panama pioneer with dissolve
+    show InversiaMOD sa semi_sideways normal pioneer normal at right with dissolve
+    show mt sad panama pioneer at left with dissolve
     sa "Здравствуйте, вы же вожатая?"
     show mt sad panama pioneer with dspr
     mt "Да, я Ольга Дмитриевна. А вы Александра и Евгений?"
@@ -397,6 +412,8 @@ label day1_inversia:
     mt "Тогда пойдёмте за мной. Выдам вам ключи от домиков, и вы сможете отдохнуть после поездки."
     
     #Фон: дорога с домиками*"
+    hide InversiaMOD with dissolve
+    hide mt with dissolve
     "Мы последовали за вожатой."
     scene bg ext_houses_day at walking_inv with dissolve
     $ renpy.pause(1.5)
@@ -409,13 +426,15 @@ label day1_inversia:
     "Пройдя сквозь ряды обычных домиков, мы подошли к другому — с зелёным фасадом, что был едва видим сквозь окружавшую его сирень."
     "Ольга зашла внутрь." 
     th "Видимо, тут она и живёт." 
-    show mt normal pioneer with dissolve
+    show mt normal pioneer at center with dissolve
+    show InversiaMOD sa semi_sideways normal pioneer normal at right with dissolve
     "Через пару минут вышла и отдала ключи от домика №28."
     mt "Это последний свободный домик. Одежду получите на складе."
     
     #Появление карты в инвентаре. появляется вкладка “карты”.* / Доработать
     #*звук появления карты*
     play sound sfx_achievement
+    show InversiaMOD sa semi_sideways smile pioneer normal with dspr
     mt "Вот вам карта лагеря, она поможет вам сориентироваться."
     sa_zg "Спасибо!"
     mt "Скоро начнётся обед, поторопитесь! А мне нужно по делам."
@@ -473,13 +492,15 @@ label day1_inversia:
     #фон склад(снаружи)*"
     scene ext_stock_day with dissolve
     "Мы постучались, и дверь открыла нам никто иная как Славя."
+    # Открытие двери (БГ) Звук и закрытие двери
     show sl normal pioneer with dissolve
     sl "Привет вам ещё раз! Вы за вещами?"
     sa_zg "Да."
     sl "Проходите, сейчас всё выдам."
-
-    #Фон: склад (внутри(с гендой))*" Доработать
     hide sl normal pioneer with dissolve
+
+    #   Фон: склад (внутри(с гендой))*" Доработать
+    scene None_BG_INV with dissolve
     "Мы зашли на склад. Славя убежала за одеждой, и мы остались стоять в одиночестве."
     show InversiaMOD sa front unsmile pioneer normal at right with dissolve
     sa "Не понимаю{w=0.3}.{w=0.3}.{w=0.3}. Как мы потеряли память? И почему мы попали именно сюда?"
@@ -509,7 +530,7 @@ label day1_inversia:
     sl "Ой, ну как по вам шили. Удобно?"
     sa_zg "Очень.{w} Спасибо, Славь."
 
-    show sl tender pioneer with dspr
+    show sl shy pioneer with dspr
     sl "Ой, да не за что."
     $ renpy.pause(1)
     show sl normal pioneer with dspr
@@ -533,6 +554,7 @@ label day1_inversia:
 
     #фон склад, снаружи день*"
     scene ext_stock_near_store2 at walking_inv with dissolve
+    $ renpy.pause(1)
     #фон площадь день*"
     scene bg ext_square_day at walking_inv with dissolve
     $ renpy.pause(0.3)
@@ -546,7 +568,7 @@ label day1_inversia:
     #Фон Домика снаружи*"
     scene bg ext_house_of_sl_day at walking_inv with dissolve
     $ renpy.pause(1)
-    scene bg ext_house_of_sl_day  with dspr
+    scene bg ext_house_of_sl_day with dspr
 
     # orchid
     "Вот мы и дошли до нашего места жительства." 
@@ -569,6 +591,7 @@ label day1_inversia:
 
     # label ne_napugal_day1:
     if napugal_us == False:
+        $ us_znakomstvo = False
         #*eat some troubles**"
         stop music
         play music music_list['eat_some_trouble'] fadein 1 
@@ -581,6 +604,7 @@ label day1_inversia:
         jump ne_napugal_day1_prodolzhenie_inv
     # label napugal_day1:
     elif napugal_us == True:
+        $ us_znakomstvo = True
         #*eat some troubles**"
         stop music
         play music music_list['eat_some_trouble'] fadein 1 
@@ -642,10 +666,10 @@ label ne_napugal_day1_prodolzhenie_inv:
     
     hide InversiaMOD sa semi_sideways normal pioneer normal with dissolve
     "Саша вышла наружу. Я тем временем быстро переоделся в пионерскую форму" 
-    show bg ext_house_of_sl_day with dissolve
+    show ggroom with dissolve
     extend" и вышел следом."
 
-    show InversiaMOD sa semi_sideways normal pioneer normal at walking_inv with dissolve
+    show InversiaMOD sa semi_sideways normal pioneer normal with dissolve
     $ renpy.pause(1)
     scene bg ext_houses_day at walking_inv with dissolve
     $ renpy.pause(0.5)
@@ -691,7 +715,7 @@ label obhodnoi_D1_inv_beach:
     hide InversiaMOD sa semi_sideways smile pioneer normal with dissolve
     "Мы разошлись. Я спокойно зашагал в сторону пляжа."
 
-    scene bg ext_houses_day at walking_inv
+    scene bg ext_houses_day at walking_inv with dissolve
     "Было солнечно, но свежий ветерок не позволял жаре застояться."
     scene ext_square_day at walking_inv with dissolve
     "Пожалуй, это именно то, что я хотел в данный момент!" 
@@ -718,7 +742,7 @@ label obhodnoi_D1_inv_boat_station:
     hide InversiaMOD sa semi_sideways smile pioneer normal with dissolve
     "Мы разошлись. Я спокойно зашагал в сторону пристани."
 
-    scene bg ext_houses_day at walking_inv
+    scene bg ext_houses_day at walking_inv with dissolve
     "Было солнечно, но свежий ветерок не позволял жаре застояться."
     scene ext_square_day at walking_inv with dissolve
     "Пожалуй, это именно то, что я хотел в данный момент!" 
@@ -986,39 +1010,43 @@ label sport_area_s_sashei_inv:
     "Я показал пальцем на карте."
     show InversiaMOD sa semi_sideways smile pioneer close with dissolve
     sa "Пошли вместе!"
-    scene bg ext_playground_day with dissolve
+    scene bg ext_playground_day  at walking_inv with dissolve
     "Мы двинулись в сторону спортплощадки и вскоре дошли до футбольного поля."
     "{w=0.3}.{w=0.3}.{w=0.3}."
     jump sport_area2_inv
 
 label sport_area2_inv:
+    scene bg ext_playground_day with dissolve
     $ obhodnoi += 1
     $ obhodnoi_odin = True
     $ sport_area2_inv = True
 
     #[Спортплощадка] 2
     "Вскоре передо мной возникло солидно выглядящее футбольное поле."
-    "{w=0.3}.{w=0.3}.{w=0.3}."
     "На нём вовсю гоняла мяч ребятня."
     "Среди неё носилась уже знакомая мне девочка, с рыжими, как огонь, волосами."
     "Единственная девочка среди юных футболистов, но играла она куда лучше." 
     "Никому из здешних пацанов не удавалось превзойти её в беге."
     "Не удивлюсь, если она самая быстрая в лагере."
+    show InversiaMOD sa semi_sideways normal pioneer normal with dissolve
     sa "А она быстрая, та, что с рыжими волосами."
     zg "Ну а как же. Других в шпионы не берут."
+    show InversiaMOD sa front surprise pioneer normal with dspr
     sa "Так это она? Да ладно{w=0.3}.{w=0.3}.{w=0.3}."
     zg "Точно это она. Ульяна зовут"
+    show InversiaMOD sa semi_sideways normal pioneer normal with dissolve
     sa "Понятно."
     sa "Не хочешь тоже сыграть?"
     zg "Я не люблю спорт."
+    show InversiaMOD sa front surprise pioneer normal with dissolve
     sa "С чего ты это взял? Ты же ничего не помнишь о своём прошлом."
     zg "Я знаю это. Нутром чувствую!"
+    show InversiaMOD sa front normal pioneer normal with dspr
     sa "А я люблю спорт — ну, я так думаю, — только вот сейчас формы нет{w=0.3}.{w=0.3}.{w=0.3}."
     zg "Значит, не в этот раз."
     "{w=0.3}.{w=0.3}.{w=0.3}."
     
     #[Если прошёл всё]
-    # Ввести переменную подсчета отчков обходного
     zg "Ладно, пошли в столовую!"
     sa "Уже пора?"
 
@@ -1232,9 +1260,9 @@ label vibor_kasety_prodolzhenie_1D_inv:
         jump uzin_inv_d1
 
 label uzin_inv_d1:
-    scene bg ext_dining_hall_away_day with dissolve
+    scene bg ext_dining_hall_away_day at walking_inv with dissolve
     $ renpy.pause(2)
-    scene bg ext_dining_hall_near_day with dissolve
+    scene bg ext_dining_hall_near_day at walking_inv with dissolve
     $ renpy.pause(1)
     scene bg int_dining_hall_people_day with dissolve
     "Мы зашли в столовую, взяли ужин и сели за столик."
@@ -1256,7 +1284,7 @@ label uzin_inv_d1:
     "Логично. От бесконечного повторения одних и тех же вопросов ответы сами не найдутся — нужно собрать как можно больше информации."
     zg "Пожалуй, ты права."
     "Поужинав, мы вышли из столовой."
-    scene bg ext_dining_hall_away_day with dissolve
+    scene bg ext_dining_hall_near_day with dissolve
 
     show InversiaMOD sa semi_sideways normal pioneer normal with dissolve
     sa "Ну что, куда пойдём?"
@@ -1410,15 +1438,20 @@ label vybor2_forest_D1_inv:
     $ renpy.pause(1)
     "Я поднялся с земли и пошёл к домику."
     # "**Typhon Voices: Mick Gordon**"
-    scene bg ext_path_night with dissolve
+    scene bg ext_path_night at walking_inv with dissolve
     $ renpy.pause(1)
-    scene bg ext_square_night with dissolve
+    scene bg ext_square_night at walking_inv with dissolve
     
     "Уже стемнело, и было плохо видно; лишь редкие фонари и звёзды освещали дорогу."
+    scene ext_houses_night at walking_inv with dissolve
+    show tuman1_inv with dissolve
+
+    #Фон домика гг ночью / Доработать
+    "Когда я добрался до жилища, я заметил появившийся словно ниоткуда туман."
+    $ renpy.pause(1)
     scene ext_houses_night with dissolve
     show tuman1_inv with dissolve
-    
-    "Когда я добрался до жилища, я заметил появившийся словно ниоткуда туман."
+
     play voice sfx_bus_idle fadein 1 volume 0.7
     "Помимо него обстановку нагнетал отдалённый звук моторов и{w=0.3}.{w=0.3}.{w=0.3}." 
     play sound sfx_draw_water

@@ -20,6 +20,7 @@ init:
     $ sport_area2_inv = False
 
     $ napugal_us = None
+    $ us_znakomstvo = None
     $ pudrenitsa = False
     $ obratil_vnimanie_inv = False
     $ first_playrhrough = False
@@ -42,6 +43,8 @@ init:
     
 #--------------#
 # bg/cg
+    image main_menu_inv = "mods/inversia/bg/main_menu_inv.jpg"
+    image None_BG_INV = "mods/inversia/bg/None_BG_INV.jpg"
 
     image temnyi_koridor = "mods/inversia/bg/temnyi_koridor.webp"
     image karidor_so_svetom = "mods/inversia/bg/karidor_so_svetom.png"
@@ -773,7 +776,46 @@ init:
 #-----------------------------------------------------------------------------------------------
     $ config.developer = True
     
-    $ mods["prolog_inversia"]=u"{font=mods/inversia/Sriracha.ttf}{size=36}{color=2af90a}Инверсия {/color}{/size}{/font}" # Название мода
+    $ mods["inv_main_menu"]=u"{font=mods/inversia/Sriracha.ttf}{size=36}{color=2af90a}Инверсия {/color}{/size}{/font}" # Название мода
+
+label inv_main_menu:
+
+    window hide
+
+    call screen inv_main_menu
+    show main_menu_inv with dissolve
+    screen inv_main_menu:
+        tag test
+        modal True
+
+        textbutton "Читать Пролог":
+            xpos 0.3 ypos 0.3 
+            text_idle_color "#fff" text_hover_color "#aaa" text_size 60 text_font "font=mods/inversia/Sriracha.ttf"
+            action Call("prolog_inversia", transition=dissolve)
+
+        textbutton "Читать 1 День":
+            xpos 0.4 ypos 0.3 
+            text_idle_color "#fff" text_hover_color "#aaa" text_size 60 text_font "font=mods/inversia/Sriracha.ttf"
+            action Call("day1_inversia", transition=dissolve)
+        
+        #textbutton "Настройки":
+        #    xpos 0.5 ypos 0.3 
+        #    text_idle_color "#fff" text_hover_color "#aaa" text_size 60 text_font "font=mods/inversia/Sriracha.ttf"
+        #    action Call("day1_inversia", transition=dissolve)
+        
+        textbutton "Выйти в главное меню":
+            xpos 0.6 ypos 0.3 
+            text_idle_color "#fff" text_hover_color "#aaa" text_size 60 text_font "font=mods/inversia/Sriracha.ttf"
+            action MainMenu(With(transition))
+        
+        textbutton "Выйти из игры":
+            xpos 0.6 ypos 0.3 
+            text_idle_color "#fff" text_hover_color "#aaa" text_size 60 text_font "font=mods/inversia/Sriracha.ttf"
+            action Quit(confirm=True)
+        
+
+
+
 
 label prolog_inversia:
     $ backdrop = "days"
