@@ -50,7 +50,7 @@ label day2_inversia:
     play sound sirena_d2_inv fadein 0.5
     "Хулиганки подпрыгнули и замерли в ступоре."
     "Затем они быстренько скрылись в направлении площади. "
-    stop sound sirena_d2_inv fadeout 0.5
+    stop sound fadeout 0.5
     pause 0.75
     play sound zensky_smekh fadein 1.0
     pause 2.35
@@ -114,9 +114,9 @@ label day2_inversia:
     "Возле умывальников стояла рыжая особа, с которой мы вчера познакомились на пляже."
     "Надеюсь она не держит зла за вчерашнее."
     "Хотя вряд-ли, все же мы посмеялись вчера вместе..."
-    scene bg ext_washstand2_sunset at running with dissolve
+    scene ext_washstand2_sunset at running with dissolve
     $ renpy.pause(0.5)
-    scene bg ext_washstand2_sunset with dissolve
+    scene ext_washstand2_sunset with dissolve
     
     show dv normal pioneer with dissolve
     dv "О, привет, поехавший."
@@ -164,8 +164,9 @@ label day2_inversia:
     show dv normal pioneer:
         xpos 0.94
         ease 2 xpos 0.5
+    pause 2.15
     show dv rage pioneer with dspr
-    pause 0.35
+    pause 0.75
     show dv normal pioneer with dspr
     show dv normal pioneer:
         xpos 0.5

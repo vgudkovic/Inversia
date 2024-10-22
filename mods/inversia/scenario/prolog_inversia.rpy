@@ -815,7 +815,7 @@ init:
 #-----------------------------------------------------------------------------------------------
     $ config.developer = True
     
-    $ mods["d2_inv_logic"]=u"{font=mods/inversia/Sriracha.ttf}{size=36}{color=2af90a}Инверсия {/color}{/size}{/font}" # Название мода
+    $ mods["inv_main_menu"]=u"{font=mods/inversia/Sriracha.ttf}{size=36}{color=2af90a}Инверсия {/color}{/size}{/font}" # Название мода
 
 label inv_main_menu:
 
