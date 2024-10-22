@@ -13,11 +13,49 @@ init:
     # Переменные
     $ dv_och = 0
     $ obhodnoi = 0
+    $ obhodnoi_d2 = False
 
     $ beach_inv_day1 = False
     $ boat_station_day1_inv = False
     $ vse_oboshol_d1_inv = False
     $ sport_area2_inv = False
+
+    #______Костыльные переменные
+    # Для пасхалки
+    $ proverka = None
+    $ muzic_club_pash_d2_inv = False 
+    $ clubs_pash_d2_inv = False 
+    $ aidpost_pash_d2_inv = False 
+    $ library_pash_d2_inv = False
+    $ pash_d2_inv = False
+
+    # Прохождение карты в целом
+    $ muzic_club_d2_inv = False 
+    $ clubs_d2_inv = False 
+    $ aidpost_d2_inv = False 
+    $ library_d2_inv = False 
+
+    #______
+#-------------------------
+    # Переменная для пасхалки День 2.
+    $ music_club_pash_d2_inv = False
+    $ clubs_pash_d2_inv = False
+    $ aidpost_pash_d2_inv = False
+    $ library_pash_d2_inv = False
+
+    # Счетчик площадок
+    $ prohod_d2 = 0
+    $ full_prohod = False
+
+    # Счетчик пасхалки
+    $ pash_prov_d2_inv = ""
+
+    # Переменные для пасхалки
+    $ pash_music = "P"
+    $ pash_clubs = "A"
+    $ pash_aidpost = "S"
+    $ pash_library = "H"
+#--------------------
 
     $ napugal_us = None
     $ us_znakomstvo = None
@@ -40,6 +78,7 @@ init:
     $ paren_zevnul = "mods/inversia/sfx/paren_zevnul.mp3"
     $ zensky_smekh = "mods/inversia/sfx/zensky_smekh.mp3"
     $ muzhskoi_smekh = "mods/inversia/sfx/muzhskoi_smekh.mp3"
+    $ sirena_d2_inv = "mods/inversia/sfx/sirena_d2_inv.ogg"
     
 #--------------#
 # bg/cg
@@ -776,18 +815,20 @@ init:
 #-----------------------------------------------------------------------------------------------
     $ config.developer = True
     
-    $ mods["inv_main_menu"]=u"{font=mods/inversia/Sriracha.ttf}{size=36}{color=2af90a}Инверсия {/color}{/size}{/font}" # Название мода
+    $ mods["d2_inv_logic"]=u"{font=mods/inversia/Sriracha.ttf}{size=36}{color=2af90a}Инверсия {/color}{/size}{/font}" # Название мода
 
 label inv_main_menu:
 
     window hide
 
     call screen inv_main_menu
-    show main_menu_inv with dissolve
     screen inv_main_menu:
+        
         tag test
-        modal True
-
+        modal True 
+         
+        # show main_menu_inv with dissolve
+        
         textbutton "Читать Пролог":
             xpos 0.3 ypos 0.3 
             text_idle_color "#fff" text_hover_color "#aaa" text_size 60 text_font "font=mods/inversia/Sriracha.ttf"
