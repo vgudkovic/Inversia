@@ -566,9 +566,9 @@ label day1_inversia:
     "Или, скорее, кто-то."
     th "Ох, похоже, что мне даже начинает тут нравиться."
     #Фон Домика снаружи*"
-    scene bg ext_house_of_sl_day at walking_inv with dissolve
+    scene ext_ggroom_day at walking_inv with dissolve
     $ renpy.pause(1)
-    scene bg ext_house_of_sl_day with dspr
+    scene ext_ggroom_day with dspr
 
     # orchid
     "Вот мы и дошли до нашего места жительства." 
@@ -611,7 +611,7 @@ label day1_inversia:
         "Посидев так минут пять, а может, и меньше, я увидел как куст возле нашего домика задёргался."
         "Я незаметно подкрался к нему сзади. "
         $ renpy.pause(0.5)
-        scene bg ext_house_of_sl_day at running2 with dissolve
+        scene ext_ggroom_day at running2 with dissolve
         show us surp2 pioneer close with dissolve
         "Прыгнув в заросли с криком «Лови Штирлица!», я выбил наблюдателя с его позиции, и мы, как бочка, покатились по дорожке."
         
@@ -619,11 +619,11 @@ label day1_inversia:
         stop music
         play music music_list['always_ready']   
         $ renpy.pause(1)
-        scene bg ext_house_of_sl_day at running2 with dissolve
+        scene ext_ggroom_day at running2 with dissolve
         show us shy pioneer close with dissolve
         $ renpy.pause(1.5)
         
-        scene bg ext_house_of_sl_day with dissolve
+        scene ext_ggroom_day with dissolve
         show us shy pioneer close with dspr
         "Когда мы наконец остановились, я увидел на себе девушку." 
         "Точнее, девочку, с красными, как огонь, волосами и голубыми глазами."
@@ -648,7 +648,7 @@ label day1_inversia:
 label ne_napugal_day1_prodolzhenie_inv:
     "Я подошёл к нашему домику и зашёл внутрь." 
     "Саша уже расстелила постель, что мне тоже предстояло сделать."
-    show ggroom with dissolve
+    show int_ggroom_day with dissolve
     #*two glasses of melancholy**
     stop music
     play music music_list['two_glasses_of_melancholy'] fadein 1.0
@@ -666,7 +666,7 @@ label ne_napugal_day1_prodolzhenie_inv:
     
     hide InversiaMOD sa semi_sideways normal pioneer normal with dissolve
     "Саша вышла наружу. Я тем временем быстро переоделся в пионерскую форму" 
-    show ggroom with dissolve
+    show ext_ggroom_day with dissolve
     extend" и вышел следом."
 
     show InversiaMOD sa semi_sideways normal pioneer normal with dissolve
@@ -1529,8 +1529,13 @@ label sunset_day1_inv:
     scene bg ext_square_sunset at walking_inv with dissolve
     "На улице попадались пионеры, а ветер приятно дул вдоль дорожки, обдавая спину прохладой."
     scene bg ext_houses_sunset at walking_inv with dissolve
-    scene ggroom at walking_inv with dissolve
-    "Я приблизился к домику и вошёл, но в нём никого не оказалось." 
+    $ renpy.pause(0.5)
+    scene ext_ggroom_sunset at walking_inv with dissolve
+    $ renpy.pause(0.5)
+    scene ext_ggroom_sunset with dissolve
+    "Я приблизился к домику"
+    scene int_ggroom_sunset with dissolve
+    extend " и вошёл, но в нём никого не оказалось." 
     "Я разлёгся на кровати."
     show blink
     
@@ -1549,7 +1554,7 @@ label sunset_day1_inv:
             "На которые ни у кого нет внятного ответа{w=0.3}.{w=0.3}.{w=0.3}."
             "Я услышал, как в дом зашли."
             hide blink with dissolve
-            scene ggroom:
+            scene int_ggroom_sunset:
                 blur 50
                 linear 0.5 blur 10
                 linear 1 blur 0 
@@ -1615,7 +1620,7 @@ label sunset_day1_inv:
             pause 0.5
             "Проснулся от того, что в домик кто-то вошёл." 
             hide blink with dissolve
-            scene ggroom:
+            scene int_ggroom_night_light:
                 blur 50
                 linear 0.5 blur 10
                 linear 1 blur 0 

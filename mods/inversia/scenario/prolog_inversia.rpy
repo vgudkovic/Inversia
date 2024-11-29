@@ -80,8 +80,9 @@ init:
     $ muzhskoi_smekh = "mods/inversia/sfx/muzhskoi_smekh.mp3"
     $ sirena_d2_inv = "mods/inversia/sfx/sirena_d2_inv.ogg"
     
-#--------------#
+#-------------------------------------------------#
 # bg/cg
+#--------------# Главное меню / Пролог
     image main_menu_inv = "mods/inversia/bg/main_menu_inv.jpg"
     image None_BG_INV = "mods/inversia/bg/None_BG_INV.jpg"
 
@@ -94,10 +95,25 @@ init:
     image bad_lager = "mods/inversia/bg/bad_lager.jpg"
     image creepy_komnata = "mods/inversia/bg/creepy_komnata.jpg"
     image chernaja_komnata_s_dvery = "mods/inversia/bg/chernaja_komnata_s_dvery.jpg"
-    
-    image ggroom = "mods/inversia/bg/ggroom.jpg"
+#--------------#
+
+#------------- Домики гг    
+    image int_ggroom_day = "mods/inversia/bg/int_ggroom_day.jpg"
+    image int_ggroom_sunset = "mods/inversia/bg/int_ggroom_sunset.jpg"
+    image int_ggroom_night_light = "mods/inversia/bg/int_ggroom_night_light.jpg"
+
+    image ext_ggroom_day = "mods/inversia/bg/ext_ggroom_day.jpg"
+    image ext_ggroom_sunset = "mods/inversia/bg/ext_ggroom_sunset.jpg"
+    image ext_ggroom_night = "mods/inversia/bg/ext_ggroom_night.jpg"
+
     image ext_sky_7dl = "mods/inversia/bg/ext_sky_7dl.jpg"
+#------------- Домики гг    
     
+#---------- Умывальники 
+    image bg ext_washstand_sunset = "mods/inversia/bg/ext_washstand_sunset.png"
+    image bg ext_washstand2_sunset = "mods/inversia/bg/ext_washstand2_sunset.png"
+#---------- Умывальники 
+
     #Склад закрытый
     image ext_stock_day = "mods/inversia/bg/ext_stock_day.jpg"
     #Склад открытый 
@@ -105,6 +121,7 @@ init:
 
     image ext_houses_night = "mods/inversia/bg/ext_houses_night_7dl.jpg"
 
+    image bg ext_houses_sunset = "mods/inversia/bg/ext_houses_sunset.jpg"
 
 
 
@@ -619,10 +636,10 @@ init:
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_happy.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_happy.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
     True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_happy.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_happy.png") )
 
-    image InversiaMOD sa bent_arm close pioneer close = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_close.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_close.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_close.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_close.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_close.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_close.png") )
+    image InversiaMOD sa bent_arm normal pioneer close = ConditionSwitch(
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_normal.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_normal.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_normal.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_normal.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_normal.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_normal.png") )
 
     image InversiaMOD sa bent_arm scared pioneer close = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((658, 1080), (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_scared.png", (0,0), "mods/inversia/sprites/sa/close/bent_arm/sa_bent_arm_scared.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
