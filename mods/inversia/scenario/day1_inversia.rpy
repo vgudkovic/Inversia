@@ -581,6 +581,7 @@ label day1_inversia:
     hide InversiaMOD sa semi_sideways smile pioneer normal with dissolve
     "Также ответив жестами, Саша зашла в домик, а я сделал вид, что иду назад." 
     "Пройдя пару метров, я залез в кусты и затаился."
+    # Выбор Для чайников 
     menu:
         "Не пугать шпиона":
             $ napugal_us = False

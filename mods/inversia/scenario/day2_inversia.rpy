@@ -303,6 +303,7 @@ label day2_inversia:
     $ renpy.pause(1)
     scene bg ext_clubs_day at walking_inv with dissolve
     $ renpy.pause(1)
+    
     if us_znakomstvo == False:
         $ us_znakomstvo = True
         scene bg ext_clubs_day with dissolve
