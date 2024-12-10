@@ -9,6 +9,12 @@ init:
     define sa_zg = Character (u"Саша и Женя", color = "#14b21b", what_color = "#f1d076")
     define kl = Character (u"Кловер", color = "#240fc4", what_color = "#f1d076")
     define klp = Character (u"Незнакомка", color = "#240fc4", what_color = "#f1d076")
+    define umi = Character (u"Юмина", color = "#fc34e4", what_color = "#f1d076")
+    define non_pi = Character (u"Незвестный", color = "#faa938", what_color = "#f1d076")
+    define th_sa = Character (None, what_color = "#f1d076")
+    define zg_shop = Character (u"Женя шопотом", color = "#00deff", what_color = "#f1d076")
+    define voice_non_mi = Character (u"Все, кроме Мику", color = "#00ff0d", what_color = "#f1d076")
+    
 #-------------# 
     # Переменные
     $ dv_och = 0
@@ -834,46 +840,25 @@ init:
     
     $ mods["inv_main_menu"]=u"{font=mods/inversia/Sriracha.ttf}{size=36}{color=2af90a}Инверсия {/color}{/size}{/font}" # Название мода
 
-label inv_main_menu:
-
-    window hide
-
-    call screen inv_main_menu
     screen inv_main_menu:
         
         tag test
         modal True 
-         
+        
+        imagemap:
+            idle "mods/inversia/bg/main_menu_inv_idle.jpg"
+            hover "mods/inversia/bg/main_menu_inv_hover.jpg"
+            alpha True
+
+            hotspot(84, 166, 573, 80) action (Hide("idle")), Jump("prolog_inversia")
+            hotspot(84, 367, 700, 90) action (Hide("idle")), Jump("day1_inversia")
+            hotspot(84, 576, 690, 90) action (Hide("idle")), MainMenu(), With(dissolve)
+            hotspot(84, 800, 675, 90) action (Hide("idle")), Quit(confirm=True)
         # show main_menu_inv with dissolve
-        
-        textbutton "Читать Пролог":
-            xpos 0.3 ypos 0.3 
-            text_idle_color "#fff" text_hover_color "#aaa" text_size 60 text_font "font=mods/inversia/Sriracha.ttf"
-            action Call("prolog_inversia", transition=dissolve)
 
-        textbutton "Читать 1 День":
-            xpos 0.4 ypos 0.3 
-            text_idle_color "#fff" text_hover_color "#aaa" text_size 60 text_font "font=mods/inversia/Sriracha.ttf"
-            action Call("day1_inversia", transition=dissolve)
-        
-        #textbutton "Настройки":
-        #    xpos 0.5 ypos 0.3 
-        #    text_idle_color "#fff" text_hover_color "#aaa" text_size 60 text_font "font=mods/inversia/Sriracha.ttf"
-        #    action Call("day1_inversia", transition=dissolve)
-        
-        textbutton "Выйти в главное меню":
-            xpos 0.6 ypos 0.3 
-            text_idle_color "#fff" text_hover_color "#aaa" text_size 60 text_font "font=mods/inversia/Sriracha.ttf"
-            action MainMenu(With(transition))
-        
-        textbutton "Выйти из игры":
-            xpos 0.6 ypos 0.3 
-            text_idle_color "#fff" text_hover_color "#aaa" text_size 60 text_font "font=mods/inversia/Sriracha.ttf"
-            action Quit(confirm=True)
-        
+label inv_main_menu:
 
-
-
+    call screen inv_main_menu
 
 label prolog_inversia:
     $ backdrop = "days"
