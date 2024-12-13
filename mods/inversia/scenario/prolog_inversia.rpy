@@ -13,11 +13,16 @@ init:
     define non_pi = Character (u"Незвестный", color = "#faa938", what_color = "#f1d076")
     define th_sa = Character (None, what_color = "#f1d076")
     define zg_shop = Character (u"Женя шопотом", color = "#00deff", what_color = "#f1d076")
-    define voice_non_mi = Character (u"Все, кроме Мику", color = "#00ff0d", what_color = "#f1d076")
+    define say_non_mi = Character (u"Все, кроме Мику", color = "#00ff0d", what_color = "#f1d076")
+    define zapiska = Character (u"Записка", color = "#046ffa", what_color = "#f1d076")
     
 #-------------# 
     # Переменные
     $ dv_och = 0
+    $ vopr_och = 0
+    $ mi_och = 0
+    $ sa = 0
+
     $ obhodnoi = 0
     $ obhodnoi_d2 = False
 
