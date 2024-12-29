@@ -1345,4 +1345,5 @@ label d2_pash_prov: # Добавляем лейбл-проверку
     "Сон потихоньку затягивал меня в свои сети{w=0.03}.{w=0.03}.{w=0.03}."
     scene black with dissolve
     $ renpy.pause(2, hard=True)
+    jump day3_inversia
     

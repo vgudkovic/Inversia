@@ -842,6 +842,8 @@ init:
 
 #-----------------------------------------------------------------------------------------------
     $ config.developer = True
+    $ config.console = True
+
     
     $ mods["inv_main_menu"]=u"{font=mods/inversia/Sriracha.ttf}{size=36}{color=2af90a}Инверсия {/color}{/size}{/font}" # Название мода
 
