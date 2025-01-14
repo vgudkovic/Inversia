@@ -21,7 +21,7 @@ init:
     $ dv_och = 0
     $ vopr_och = 0
     $ mi_och = 0
-    $ sa = 0
+    $ sa_och = 0
 
     $ obhodnoi = 0
     $ obhodnoi_d2 = False
@@ -130,9 +130,8 @@ init:
     #Склад открытый 
     image ext_stock_near_store2 = "mods/inversia/bg/ext_stock_near_store2.jpg"
 
-    image ext_houses_night = "mods/inversia/bg/ext_houses_night_7dl.jpg"
-
     image bg ext_houses_sunset = "mods/inversia/bg/ext_houses_sunset.jpg"
+    image bg ext_houses_night = "mods/inversia/bg/ext_houses_night.jpg"
 
 
 

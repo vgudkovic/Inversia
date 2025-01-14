@@ -404,9 +404,9 @@ label day3_inversia:
 
     scene bg int_dining_hall_people_day at walking_inv with dissolve
     $ renpy.pause(1)
-    scene ext_dining_hall_near at walking_inv with dissolve
+    scene ext_dining_hall_near_day at walking_inv with dissolve
     $ renpy.pause(1)
-    scene ext_dining_hall_away at walking_inv with dissolve
+    scene ext_dining_hall_away_day at walking_inv with dissolve
     $ renpy.pause(1)
     scene bg ext_square_day at walking_inv with dissolve
     $ renpy.pause(1)
@@ -451,7 +451,7 @@ label day3_inversia:
     "Саша ко мне подошла и спросила:"
     sa "У тебя всё окей?"
     zg "Честно, нет.{w} Опять воспоминания."
-    show InversiaMOD sa front noraml pioneer normal with dissolve
+    show InversiaMOD sa front normal pioneer normal with dissolve
     sa "Всё нормально, поговорим об этом потом.{w} Давай пока сыграем что, можем."
     zg "Ты права.{w} Ты на чём будешь играть?"
     sa "Я на бас гитаре, вроде бы{w=0.03}.{w=0.03}.{w=0.03}.{w} Мику так назвала этот инструмент."
@@ -467,7 +467,7 @@ label day3_inversia:
     zg "Окей, я начну."
     $ renpy.pause(1)
     "Присев на стул, я начал играть сперва разыгровку." 
-    show mi shock pioneer with dspr
+    show mi shocked pioneer with dspr
     show InversiaMOD sa front shocked pioneer normal with dspr
     "Пока я разыгрывался, смотря на Мику и Сашу, я видел их удивление, а у Мику даже восхищение." 
     "Я закончил играть, девочки похлопали, и я, смотря в окно, увидел чей то силуэт." 
@@ -483,6 +483,7 @@ label day3_inversia:
     mi "Вот это здорово, ты учился в музыкальной школе?"
     zg "И да и нет, немного друг научил, а потом сам."
     show mi smile pioneer with dspr
+    show InversiaMOD sa front normal pioneer normal with dspr
     mi "Ого, для самоучки это хорошо, даже очень."
     zg "Спасибо, мне что-то сыграть из произведений?"
     mi "Если хочешь."
@@ -495,7 +496,7 @@ label day3_inversia:
             $ mi_och +=1
             "Я начал играть, даже не задумываясь, что за песня.{w} Я даже запел." 
             "Все, кто был в клубе, были в шоке и я сам пребывал в такой эйфории."
-            show mi shock pioneer with dspr
+            show mi shocked pioneer with dspr
             show InversiaMOD sa front shocked pioneer normal with dspr
         "2. Стук (Цой)":
             # "Выбор 2: (+1 Лп Алисы)"
@@ -512,10 +513,10 @@ label day3_inversia:
             th "Почему я здесь и почему я не помню всей жизни??" 
             th "Именно она всегда заставляла задуматься в своих действиях."
 
-    show mi noraml pioneer with dissolve
+    show mi normal pioneer with dissolve
     show InversiaMOD sa semi_sideways normal pioneer normal with dissolve
     "Пока я играл, незаметно в клуб зашла Алиса.{w} Только закончив играть, я заметил её."
-    show dv noraml pioneer2 at center with dissolve
+    show dv normal pioneer2 at center with dissolve
     dv "Привет всем, вы тут чем занимаетесь?"
     "Сказала Алиса, когда я закончил играть."
     zg "И тебе привет.{w} Да вот показываем таланты."
@@ -525,7 +526,7 @@ label day3_inversia:
     # Предложения по правкам / Доработать
     sa "Женя, я как раз хотела сыграть.{w} Но ты пришла."
     dv "Так играй, я послушаю, не помешаю."
-    th"Саша попробовала струны, и начала играть, я даже не узнал песню сразу."
+    th "Саша попробовала струны, и начала играть, я даже не узнал песню сразу."
 
     $ d3_mus_roll = renpy.random.randint(1, 5)
     "Выпало [d3_mus_roll]"
@@ -569,7 +570,9 @@ label d3_roll_contine:
     mi "Так, вы выбрали песню. Вокал есть, гитарист есть.{w} Осталось найти барабанщика!"
     play sound sfx_open_door_strong
     $ renpy.pause(0.5)
-    show us normal pioneer with dissolve
+    show us normal pioneer:
+        anchor (0.5, 0.5) xpos -1 ypos 0.5
+        ease 1 xpos 0.65 ypos 0.5
     "Вдруг в клуб ворвалась Ульяна."
     dv "Вот он собственно!"
     "Указывая на Ульяну сказала Алиса."
@@ -577,15 +580,15 @@ label d3_roll_contine:
     us "Кстати, о чём болтаете?"
 
     mi "Женя и Саша собираются пойти на концерт, но им не хватает барабанщика.{w} Алиса сказала, что ты сможешь помочь."
-    show us surprise pioneer with dspr
+    show us shy pioneer with dspr
     us "Я?"
     mi "Да, концерт совсем скоро, нам надо отрепетировать."
     show us laugh pioneer with dspr
     us "Ну{w=0.03}.{w=0.03}.{w=0.03}.{w} Я согласна, только конфеты вперёд!"
     mi "Ой, ну все, тебе лишь бы сладкое. {w}Мне Славя приносила недавно кулёк, посмотри в подсобке."
-    show ud laugh pioneer:
-        anchor (0.5, 0.5) xpos 0.5 ypos 0.5
-        ease 1 xpos 0 ypos 0.5
+    show us laugh pioneer:
+        anchor (0.5, 0.5) xpos 0.65 ypos 0.5
+        ease 1 xpos -1 ypos 0.5
     "Ульяна полезла в подсобку."
     # Звук удара и тряска экрана
     play sound sfx_bodyfall_1 volume 0.35
@@ -594,8 +597,8 @@ label d3_roll_contine:
     play sound sfx_brass_drop volume 0.35
     "Что и ожидалось. Ульяна устроила погром, судя по звукам."
     show us smile pioneer:
-        xpos 0 ypos 0.5
-        ease 1 xpos 0.5 ypos 0.5 
+        anchor (0.5, 0.5) xpos -1 ypos 0.5
+        ease 1 xpos 0.65 ypos 0.5 
     "Через минуту, Ульяна ликующе держала кулёк в руках.{w} Она сразу развязала и взяла одну конфету." 
     "Сев за барабаны Ульяна сказала сквозь поедания своего трофея:"
     us "Так фто ихрать будем?"
@@ -604,12 +607,12 @@ label d3_roll_contine:
     "Демонстративно показала на кассеты которые я держал."
 
     #"Горн"
-    show mi shock pioneer with dspr
+    show mi shocked pioneer with dspr
     mi "Ой Время.{w} Мне надо к Ольге бежать, до ужина меня не будет, так что начнём завтра."
     say_non_mi "Хорошо!"
-    show mi shock pioneer:
+    show mi shocked pioneer:
         anchor (0.5, 0.5) xpos 0.28 ypos 0.5
-        ease xpos 0 ypos 0.5
+        ease 1 xpos -1 ypos 0.5
     $ renpy.pause(2)
     scene bg ext_musclub_day with dissolve
     $ renpy.pause(1)
@@ -657,8 +660,9 @@ label d3_roll_contine:
             "Я уже начал вставать, вживаясь в роль знатока пляжных мест и идти к предлагаемому второму месту, как вдруг возле головы у меня что то заскрипело." 
             "Повернувшись, я увидел на досках этого пирса Семёна, он стоял на пирсе и как будто звал нас.{w} Хотел что-то показать." 
             "Я решил подойти к нему, а он начал царапать одну дощечку, я его попытался убрать, но он не унимался."
-            show InversiaMOD sa bent_arm surprise pioneer normal with dspr
+            show InversiaMOD sa bent_arm shock pioneer normal with dspr
             sa "Походу он что-то там нашёл, надо снять эту дощечку."
+            show InversiaMOD sa bent_arm normal pioneer normal with dspr
             "Взявшись за дощечку я сказал:"
             zg "На счёт Три.{w} Раз.{w=0.5} Два.{w=0.5} ТРИ!"
             "Поднявшись мы начали тянуть, и поскольку пирс стоял давно, и его не обслуживали (было видно по дереву) мы смогли вытащить эту дощечку." 
@@ -713,7 +717,7 @@ label d3_roll_contine:
             sa "Но тут ничего нет."
             th "Я решил просветить бумагу{w=0.03}.{w=0.03}.{w=0.03}."
             zg "Нет, ты не права.{w} Тут ещё что-то написано.{w} Симпатическими чернилами."
-            show InversiaMOD sa front thoughtful2 with dspr
+            show InversiaMOD sa front thoughtful with dspr
             sa "Чем??"
             zg "Симпатическими или невидимые чернила. "
             show InversiaMOD sa front normal pioneer close with dspr
@@ -733,11 +737,11 @@ label d3_roll_contine:
             
             scene bg ext_houses_day at walking_inv with dissolve
             $ renpy.pause(1)
+            scene bg ext_houses_day with dissolve
             # "клуб кибернетики снаружи*"
-            scene bg ext_clubs_day at walking_inv with dissolve
             "По дороге мы встретили будущих гениев отечественной кибернетики.{w} Они шли по дороге от клубов."
-            show el normal pioneer with dissolve
-            show sh normal pioneer with dissolve
+            show el normal pioneer at left with dissolve
+            show sh normal pioneer at right with dissolve
             el "Привет!"
             "Шурик приветственно кивнул."
             zg "Привет. А вы куда?"
@@ -770,27 +774,28 @@ label d3_roll_contine:
             hide sh
             hide el
             with dissolve
-
             $ renpy.pause(1)
             scene bg ext_houses_day at walking_inv with dissolve
+
             $ renpy.pause(1)
             scene bg ext_clubs_day at walking_inv with dissolve
             $ renpy.pause(1)
             scene bg ext_clubs_day with dissolve
             
             "Придя к клубам, я открыл дверь." 
-            scene bg int_clubs_day with dissolve
+            scene bg int_clubs_male_day with dissolve
             "Здесь было гораздо прохладнее, чем снаружи." 
             th "Надеюсь, я смогу найти предмет, который поможет раскрыть, что тут написано." 
             th "Можно сперва поискать лампочку, гнездо для неё и наверно{w=0.03}.{w=0.03}.{w=0.03}.(вписать)."
             # "*время поиска*"
             "Мы с Сашей, найдя всё нужное, начали расшифровку этой бумаги."
             # "*Ещё интерактив*"
-            show InversiaMOD sa bent_arm happy pioneer normal with dissolve
+            show InversiaMOD sa bent_arm normal pioneer normal with dissolve
             sa "Смотри!{w} Что-то появилось!"
             zg "Вижу, но не могу разобрать. {w}Слишком мелко."
             show InversiaMOD sa bent_arm smile pioneer normal with dspr
             sa "Наверное, для этого и нужна была лупа."
+            show InversiaMOD sa bent_arm normal pioneer normal with dissolve
             # "Саша подаёт лупу, которая была из шкатулки"
             zg "Да, походу для этого."
             # "Работа с лупой"
@@ -854,11 +859,11 @@ label d3_roll_contine:
             $ renpy.pause(1)
             scene bg ext_square_sunset at walking_inv with dissolve
             $ renpy.pause(1)
-            scene ext_dining_hall_near_sunset at walking_inv with dissolve
-            $ renpy.pause(1)
             scene ext_dining_hall_away_sunset at walking_inv with dissolve
             $ renpy.pause(1)
-            scene bg int_dining_hall_people_sunset with dissolve
+            scene ext_dining_hall_near_sunset at walking_inv with dissolve
+            $ renpy.pause(1)
+            scene bg int_dining_hall_sunset with dissolve
 
             "Зайдя в столовую, мы взяли ужин, который состоял из пюре с котлетой, и ватрушки." 
             "Когда мы сели за стол, я спросил у Саши:"
@@ -873,11 +878,11 @@ label d3_roll_contine:
             th "Этот пионер.{w} Очень уж он странный.{w} Хотя нас тоже нельзя назвать нормальными." 
             "Поев, мы пошли спокойно в наш домик."
 
-            scene ext_dining_hall_away_sunset with dissolve
-            $ renpy.pause(1)
-            scene ext_dining_hall_away_sunset at walking_inv with dissolve
+            scene ext_dining_hall_near_sunset with dissolve
             $ renpy.pause(1)
             scene ext_dining_hall_near_sunset at walking_inv with dissolve
+            $ renpy.pause(1)
+            scene ext_dining_hall_away_sunset at walking_inv with dissolve
             $ renpy.pause(1)
             scene bg ext_square_sunset at walking_inv with dissolve
             $ renpy.pause(1)
@@ -927,11 +932,11 @@ label d3_roll_contine:
             scene ext_ggroom_night with dissolve
             "Подойдя к нему, я уже ожидал что-то необычное, но вокруг всё было нормально." 
             "Я немного прыснул и зашёл в домик." 
-            scene int_ggroom_night with dissolve
+            scene int_ggroom_night_light with dissolve
             "Саша уже спала, пока гулял.{w} Так что я тихо снял одежду и спокойно лёг спать."
             klp "Надеюсь, они смогут найти тот вход, а то я сама не справлюсь."
             klp "Ох{w=0.03}.{w=0.03}.{w=0.03}.{w} Наверное, девочки волнуются."
-            scene int_ggroom_night:
+            scene int_ggroom_night_light:
                 blur 0
                 ease 1 blur 60
                 ease 1 blur 100
