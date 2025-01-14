@@ -857,7 +857,7 @@ init:
             alpha True
 
             hotspot(84, 166, 573, 100) action (Hide("idle")), Jump("prolog_inversia")
-            hotspot(84, 367, 700, 90) action (Hide("idle")), Jump("day3_inversia")
+            hotspot(84, 367, 700, 90) action (Hide("idle")), Jump("prolog_inversia")
             hotspot(84, 576, 690, 110) action (Hide("idle")), MainMenu(), With(dissolve)
             hotspot(84, 800, 675, 110) action (Hide("idle")), Quit(confirm=True)
         # show main_menu_inv with dissolve
